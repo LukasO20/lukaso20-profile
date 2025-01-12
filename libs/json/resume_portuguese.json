@@ -1,0 +1,46 @@
+{
+    "article": {
+        "titles": [
+            "Tecnologias", "Outros", "Contatos"
+        ],
+        "others": [
+            "Gerenciamento de projetos com Azure DevOps"
+        ],
+        "contacts": ["Celular: (55)1198542-5030"],
+        "last_p": ["São Paulo - SP, Brasil"]
+    },
+    "section": {
+        "titles_h2": ["Desenvolvedor Front-end"],
+        "titles_h3": ["Experiência", "Afixcode Soluções Administrativas Ltda", "Educação"],
+        "titles_h4": [
+            "Desenvolvedor Front-end Junior (Janeiro 2024 - Atual)",
+            "Estagiário (Setembro 2022 - Dezembro 2023)",
+            "Udemy",
+            "Universidade Cruzeiro do Sul"
+        ],
+        "p_section": [
+            "Eu trabalhei em projetos web que utilizam JavaScript como a principal tecnologia no front-end. Adquiri mais experiência e conhecimento na criação de telas web responsivas, interfaces dinâmicas e aprimorando a experiência geral do usuário. Além disso, construí websites com a estrutura ASP.NET MVC, tecnologia C# para construir componentes e utilizei tecnologias que fazem parte do .NET Core. Minhas habilidades principais incluem HTML, CSS, SCSS, JavaScript, React JS, jQuery, .NET Core e C#.",
+            "Contribuindo para um software de gerenciamento de tempo e produtividade, realizei manutenção e apliquei melhorias na responsividade web, funções do software, criei componentes com C# para o Back-end e outras melhorias gerais. A execução das tarefas também envolveu a utilização de tecnologias como JavaScript, HTML, CSS, SCSS e jQuery para manter e melhorar o Front-end do software.",
+            "Eu trabalhei em sistemas de soluções para controle de ativos e em um projeto de software de gerenciamento de tempo e produtividade. Também participei da criação de um projeto para gerenciamento de usuários da empresa. E aprendi mais sobre a tecnologia ASP.NET MVC, a linguagem de programação C# e o gerenciamento de projetos com o GitHub.",
+            "Curso web moderno com JavaScript mais projetos - São Paulo, Brasil.",
+            "Graduação em Análise e Desenvolvimento de sistemas - São Paulo, Brasil."
+        ],
+        "li_section": [
+            "Desenvolvimento e manutenção web de sistema responsivo de produtividade, priorizando interfaces interativas e dinâmicas, com uso de HTML, CSS, SCSS, JavaScript e jQuery.",
+            "Colaboração com a equipe na implementação de novos componentes para sistema de produtividade com as tecnologias C#, .NET e JavaScript.",
+            "Participação ativa em colaboração com a equipe nas revisões de código e planejamento.",
+            "Colaboração com a equipe na elaboração de novas ideias de componentes e funções para o sistema.",
+            "Utilização do Git e Azure DevOps para versionamento de código, garantindo o controle eficiente das alterações e atualizações.",
+            "Realização de check-ins regulares em branches específicas para novas funcionalidades, correções de bugs e melhorias de performance.",
+            "Depuração e correção de bugs críticos para sistema de produtividade, incluindo problemas de sincronização de dados e falhas de layout em navegadores executados em telas menores, resultando em uma experiência de usuário mais fluida.",
+            "Colaboração com a equipe na aplicação de boas práticas de codificação e arquitetura de software.",
+            "Apoio no desenvolvimento e manutenção de sistemas web internos responsivos e plataformas de produtividade, garantindo funcionalidades estáveis e otimizadas para diferentes dispositivos.",
+            "Auxilio no desenvolvimento na criação de interfaces web com HTML, CSS, JS e resolução de bugs impactantes na interface do sistema.",
+            "Auxilio no desenvolvimento na criação de componentes com C#, .NET e resolução de bugs impactantes em requisições de dados."
+        ],
+        "label_section": [
+            "Conclusão - 2023",
+            "Conclusão - 2023"
+        ]
+    }
+}

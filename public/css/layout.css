@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+* {
+  font-family: "Red Hat Display", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  overflow-x: hidden;
+}
+body .smooth-el {
+  transition: 0.3s ease-in-out;
+}
+body .smooth-el * {
+  transition: 0.3s ease-in-out;
+}
+body .loader {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .loader .loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid;
+  border-top: 5px solid;
+  border-radius: 50%;
+  animation: spin 1.35s linear infinite;
+}
+body .icon {
+  font-size: 1.5em;
+}
+body .btn-bg-round {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+}
+body .btn-bg-round-flat {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 0em 0.25em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+body .btn-bg-round-flat * {
+  cursor: pointer;
+}
+body .btn-bg-round-flat .icon {
+  font-size: 0.85em;
+  margin: 0em 0.25em;
+  margin-top: 0.25em;
+}
+body a {
+  text-decoration: none;
+}
+body .container {
+  display: grid;
+  grid-template-rows: auto minmax(100vh, auto) 82vh;
+  animation: fade 3s;
+}
+body .container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 5em;
+}
+body .container .header .header--section-left .section-left--logo img {
+  border-radius: 0.7em;
+  padding: 0.35em 0.15em;
+}
+body .container .header .header--section-middle {
+  display: none;
+}
+body .container .header .header--section-right {
+  display: flex;
+  align-items: center;
+}
+body .container .header .header--section-right .section-right--nav .nav--ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 1.5em;
+}
+body .container .header .header--section-right .section-right--nav .nav--ul .ul--li * {
+  cursor: pointer;
+}
+body .container .header .header--section-right .section-right--nav .nav--ul .ul--li a {
+  text-decoration: none;
+}
+body .container .header .header--section-right .section-right--nav .nav--ul .ul--li a label {
+  padding-bottom: 0.25em;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-color: transparent;
+}
+body .container .header .header--section-right .section-right--options {
+  margin: 0em 2em;
+}
+body .container .header .header--section-right .section-right--options .btn-bg-round {
+  cursor: pointer;
+}
+body .container .container-content {
+  scroll-snap-align: start;
+}
+body .container .container-content .main {
+  display: flex;
+  height: 100%;
+  position: relative;
+  animation: fade 1s ease-in-out;
+}
+body .container .container-content .main .btn-bg-round.back-home {
+  position: absolute;
+  left: -7em;
+  margin: 1.5em 1.34em 1.34em 1.34em;
+  cursor: pointer;
+}
+body .container .container-content .main .btn-bg-round.back-home .icon {
+  font-size: 1.15em;
+}
+body .container .container-content .main[type=about], body .container .container-content .main[type=contact], body .container .container-content .main[type=experience] {
+  flex-direction: column;
+  width: 50%;
+  margin: 0em auto;
+}
+body .container .container-content .main[type=about] .card, body .container .container-content .main[type=contact] .card, body .container .container-content .main[type=experience] .card {
+  margin: 1em 0em;
+  border-radius: 1em;
+  padding: 1em;
+  backdrop-filter: blur(0);
+  animation: blurEffect 1s ease-in-out 0.6s forwards;
+}
+body .container .container-content .main[type=home] {
+  width: 75%;
+  margin: 0em auto;
+}
+body .container .container-content .main[type=home] .main--section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body .container .container-content .main[type=home] .main--section .section--title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-left .title-sec1 h1 {
+  font-size: 3.5em;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-left .title-sec2 h1, body .container .container-content .main[type=home] .main--section .section--title .title-left .title-sec2 h2 {
+  font-size: 2.5em;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-right {
+  display: flex;
+  align-items: center;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-right p {
+  font-size: 1.75em;
+  width: 20em;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-right p .title-right--title {
+  padding: 0em 0.5em;
+  border-radius: 1em;
+  cursor: pointer;
+}
+body .container .container-content .main[type=home] .main--section .section--title .title-left, body .container .container-content .main[type=home] .main--section .section--title .title-right {
+  padding: 2.5em 3em;
+}
+body .container .container-content .main[type=home] .main--section .section--social-media {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0em 1em;
+  padding: 0em 3em;
+}
+body .container .container-content .main[type=home] .main--section .section--social-media * {
+  cursor: pointer;
+}
+body .container .container-content .main[type=about] .card p {
+  text-align: start;
+  line-height: 1.75em;
+  font-size: 1em;
+}
+body .container .container-content .main[type=contact] .card h3 {
+  text-align: center;
+}
+body .container .container-content .main[type=contact] .card .card--body > div {
+  padding: 0em 1em;
+}
+body .container .container-content .main[type=contact] .card .card--body .message-pop-up {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  display: flex;
+  padding: 0.5em 1em;
+  margin: 1em auto;
+  width: max-content;
+  border-radius: 1em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-top {
+  padding: 0em 1em;
+  margin-top: 2.5em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-top .p-user-data {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 0em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-top .p-user-data label {
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-top .p-user-data input {
+  padding: 0.75em;
+  background-color: transparent;
+  border: solid 2px;
+  border-radius: 0.5em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 0em 1em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom .div-user-data-textarea {
+  display: flex;
+  flex-direction: column;
+  max-height: 30em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom .div-user-data-textarea .p-textarea {
+  margin-top: 0em;
+  font-weight: 600;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom .div-user-data-textarea textarea {
+  border-radius: 0.5em;
+  background-color: transparent;
+  padding: 0.75em;
+  border: solid 2px;
+  resize: vertical;
+  transition: none;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom .div-user-data-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom .div-user-data-send .send-email {
+  padding: 0.75em 1.5em;
+  margin: 2em 0em 0em 0em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 3em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-info .line {
+  display: inline-flex;
+  height: 1px;
+  width: 35%;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat h3 {
+  width: 100%;
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0em 1.5em 1.5em 1.5em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat > label > span {
+  margin-bottom: 0.5em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat > label > span .icon {
+  font-size: 1rem;
+  margin: 0em 0.5em;
+}
+body .container .container-content .main[type=contact] .card .card--body .body--section-bottom-chat > label a:hover {
+  text-decoration: underline;
+}
+body .container .container-content .main[type=experience] .main-experience {
+  display: flex;
+  gap: 3em;
+}
+body .container .container-content .main[type=experience] .main-experience .card:last-child {
+  padding: 0em;
+}
+body .container .container-content .main[type=experience] .main-experience .card .icon {
+  font-size: 0.85em;
+  margin: 0.25em;
+}
+body .container .container-content .main[type=experience] .main-experience .card.main-experience--aside {
+  flex: 2;
+}
+body .container .container-content .main[type=experience] .main-experience .card.main-experience--aside .aside-professional--skills .skills-division p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+body .container .container-content .main[type=experience] .main-experience .card.main-experience--aside .aside-professional--skills .skills-division p label {
+  font-size: 0.9em;
+  padding: 0.5em;
+  border-radius: 2em;
+  font-weight: 600;
+}
+body .container .container-content .main[type=experience] .main-experience .card.main-experience--body {
+  flex: 5;
+}
+body .container .container-content .main[type=experience] .main-experience .card.main-experience--body .experiences--bottom a {
+  border-radius: 2em;
+  padding: 0.25em 0.5em;
+  font-weight: 600;
+}
+body .container .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .container .footer.hide {
+  overflow: hidden;
+  height: 0em;
+}
+body .container .footer h3 {
+  margin: 1em 0.25em;
+}
+body .container .footer .icon {
+  margin-right: 0.25em;
+  font-size: 1em;
+}
+body .container .footer .footer--shortcuts, body .container .footer .footer--info {
+  display: flex;
+  padding: 5em;
+  flex: 1;
+}
+body .container .footer .footer--info {
+  padding: 3em 5em;
+}
+body .container .footer .footer--shortcuts {
+  gap: 1.5em;
+  align-items: center;
+}
+body .container .footer .footer--shortcuts > div {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+}
+body .container .footer .footer--shortcuts > div ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0em;
+  list-style: none;
+  height: 10em;
+  gap: 0.5em;
+}
+body .container .footer .footer--shortcuts > div ul li a {
+  display: flex;
+  align-items: center;
+  padding: 1em 0.5em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  cursor: pointer;
+}
+body .container .footer .footer--shortcuts > div ul li a .icon {
+  margin-right: 0.5em;
+}
+body .container .footer .footer--info {
+  justify-content: space-between;
+  flex: 0.25;
+  align-items: end;
+  flex-wrap: wrap;
+}
+body .container .footer .footer--info .line {
+  display: inline-flex;
+  width: 100%;
+  height: 1px;
+}
+body .container .footer .footer--info .info--info-left p a {
+  text-decoration: none;
+  font-weight: 600;
+}
+body .container .footer .footer--info .info--info-left p a:hover {
+  text-decoration: underline;
+}
+body .container .footer .footer--info .info--info-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+body .container-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  width: 5em;
+  height: 5em;
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  gap: 0.5em;
+}
+body .container-scroll-indicator > label {
+  padding: 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+}
+body .container-scroll-indicator > label:active {
+  padding: 0.6em;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes blurEffect {
+  0% {
+    backdrop-filter: blur(0);
+  }
+  100% {
+    backdrop-filter: blur(0.5em);
+  }
+}
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,245 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(212, 212, 212);
+}
+
+main {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin: 3em auto;
+    width: 70em;
+    color: rgb(70, 70, 70);
+}
+
+h1 {
+    margin-top: 0.2em;
+}
+
+h2, h4 {
+    color: rgb(80, 80, 80);
+}
+
+article {
+    padding: 5em 2.5em;
+    width: 30%;
+    background-color: rgb(236, 236, 236);
+}
+
+article .article-contacs {
+    list-style: none;
+}
+
+.article-contacs .li-item.alt {
+    display: none;
+}
+
+.items-socialmedia {
+    display: flex;
+    margin: 0em 2em;
+    flex-direction: column;
+}
+
+.items-socialmedia p {
+    margin: 5px;
+}
+
+.items-socialmedia a {
+    color: rgb(5, 69, 153);
+    text-decoration: none;
+    margin-right: 0.75em;
+}
+
+.items-socialmedia a span {
+    margin-right: 0.3em;
+}
+
+.article-country {
+    margin: 2em 2.5em;
+}
+
+section {
+    padding: 2em;
+    width: 75%;
+    text-align: justify;
+}
+
+section .div-section-head, .div-section-body {
+    padding: 0em 3em;
+}
+
+.div-section-head h1 {
+    color: rgb(5, 69, 153);
+    font-size: 2.8em;
+}
+
+.div-section-head .about {
+    margin: 1em 4em 1em 0em;
+}
+
+.div-section-body .content-sb1, .div-section-body .content-sb2 {
+    margin: 3em 0em;
+}
+
+.div-section-body .content-sb1 .title, .div-section-body .content-sb2 .title {
+    color: rgb(5, 69, 153);
+}
+
+.div-section-body .content-sb1 .company1 {
+    margin: 1em 4em 1em 0em;
+}
+
+.div-section-body .content-sb2 .education-content-label {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.div-section-body .content-sb2 .education1 .child-education-title, .div-section-body .content-sb2 .education2 .child-education-title {
+    margin-bottom: 0.1em;
+}
+
+.div-section-body .content-sb2 .education1, .div-section-body .content-sb2 .education2 {
+    margin: 2em 4em 2em 0em;
+}
+
+.div-section-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.div-section-container span {
+    transition: .2s ease-in-out;
+    padding: 0.6em;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.div-section-container span.download:hover {
+    border-color: rgb(190, 190, 190);
+    cursor: pointer;
+}
+
+.div-section-container .button-translate.active {
+    font-weight: 600;
+    color: rgb(5, 69, 153);
+}
+
+.div-section-container .button-translate:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* RESUME PRINT */
+.main-print {
+    margin: 0em;
+    width: auto;
+}
+
+.section-print {
+    font-size: 0.82em;
+    padding: 3em 0em;
+    width: auto;
+}
+
+.section-print .div-section-head {
+    padding: 0em 0em 0em 3em;
+}
+
+.section-print .div-section-head h1 {
+    font-size: 1.85em;
+}
+
+.section-print .div-section-head h2 {
+    font-size: 1.25em;
+}
+
+.section-print .div-section-body {
+    padding: 0em 0em 0em 3em;
+}
+
+.article-print {
+    padding: 2.5em 1em;
+    font-size: 0.82em;
+}
+
+.article-print .title:nth-child(1) {
+    margin-top: 1em;
+}
+
+.article-print .title {
+    margin: 0em 0em 0em 1em;
+}
+
+.article-print ul {
+    padding: 0em;
+    margin: 1em 2em;
+}
+
+.article-print .items-socialmedia {
+    display: none;
+}
+
+.article-print .article-country {
+    margin: 0em;
+    margin: 0em 2.2em;
+}
+
+.div-section-container-print {
+    display: none;
+}
+
+/* MEDIA QUERY SETTINGS */
+
+/* print settings */
+
+@page {
+    size: A3;
+    margin: 0cm;
+}
+
+@media print {
+
+    /* BODY */
+
+    /* Individual Settings */
+    /* block */
+    body {
+        background-color: rgb(212, 212, 212);
+    }
+
+    main {
+        width: 65em;
+    }
+
+    section {
+        width: 75%;
+    }
+
+    /* element */
+    .div-section-container {
+        opacity: 0;
+    }
+
+    .div-section-head, .div-section-body {
+        padding: 0em 0em 0em 3em;
+    }
+
+    .content-sb1 .company1  {
+        margin: 0em;
+    }
+
+    .about.chld-p {
+        margin: 1em 0em 1em 0em;
+    }
+
+    .article-contacs .li-item.alt {
+        display: block;
+    }    
+
+    .items-socialmedia {
+        display: none;
+    }
+}

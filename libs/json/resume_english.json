@@ -1,0 +1,46 @@
+{
+    "article": {
+        "titles": [
+            "Technologies", "Others", "Contacts"
+        ],
+        "others": [
+            "Management project with Azure DevOps"
+        ],
+        "contacts": ["Phone: (55)1198542-5030"],
+        "last_p": ["São Paulo - SP, Brazil"]
+    },
+    "section": {
+        "titles_h2": ["Front-end Developer"],
+        "titles_h3": ["Experience", "Afixcode Administrative Solutions Ltd", "Education"],
+        "titles_h4": [
+            "Junior Frontend Developer (January 2024 - Current)",
+            "Trainee (September 2022 - December 2023)",
+            "Udemy",
+            "Cruzeiro do Sul University"
+        ],
+        "p_section": [
+            "I worked on web projects that use JavaScript as the principal technologie on the front-end. I have gained more experience and knowledge in creating resposive web screens, dynamic interfaces, and enchacing the overall user experience. Also, I built websites with structure ASP.NET MVC, C# technology to build components and use of technologies that are part of .NET Core. My principal skills contains HTML, CSS, Scss, JavaScript, React JS, jQuery, .NET Core and C#.",
+            "Contribuing to a time management and productivity software, I performed maintence and applied improvements in web responsivity, software functions, created components with C# for Back-end, and other general improvements. The execution of tasks also involved utilizing technologies such as JavaScript, HTML, CSS, SCSS, and jQuery to maintaining and improving the Front-end of the software.",
+            "I worked on system of solutions for asset control and a project of time management and productivity software. Also I participated in the creation of project to management users of the company. And I learned more about technology ASP.NET MVC, language programming C# and projects management with GitHub.",
+            "Complete web modern course with JavaScript plus projects - São Paulo, Brazil.",
+            "Technology Degree in Systems Analysis and Development - São Paulo, Brazil."
+        ],
+        "li_section": [
+            "Development and maintenance of a responsive productivity web system, prioritizing interactive and dynamic interfaces using HTML, CSS, SCSS, JavaScript, and jQuery.",
+            "Collaboration with the team on implementing new components for the productivity system using technologies like C#, .NET, and JavaScript.",
+            "Active participation in team code reviews and project planning.",
+            "Team collaboration in brainstorming and creating new ideas for system components and features.",
+            "Utilization of Git and Azure DevOps for version control, ensuring efficient management of changes and updates.",
+            "Regular check-ins to specific branches for new features, bug fixes, and performance improvements.",
+            "Debugging and fixing critical bugs in the productivity system, including data synchronization issues and layout failures on smaller screens, resulting in a smoother user experience.",
+            "Collaboration with the team in applying best practices for coding and software architecture.",
+            "Support in the development and maintenance of responsive internal web systems and productivity platforms, ensuring stable and optimized functionality across different devices.",
+            "Assistance in developing and creating web interfaces with HTML, CSS, and JavaScript, as well as resolving impactful interface bugs.",
+            "Support in developing and creating components with C# and .NET, as well as fixing critical bugs in data request processes."
+        ],
+        "label_section": [
+            "Conclusion - 2023",
+            "Conclusion - 2023"
+        ]
+    }
+}
