@@ -11,7 +11,10 @@ const renderPage = (route) => {
         .then(html => container.innerHTML = html)
         .catch(error => {
             console.log('Error loading page: ', error)
-            container.innerHTML = `<div class="message"><h1>404 - Page not found :[</h1></div>`
+            container.innerHTML = `<div class="message alert">
+                    <img src="libs/icon/logo-dark-mode.svg" alt="logo">
+                    <h1>404 - Page not found :[</h1>
+                </div>`
             throw error
         })
 }

@@ -128,6 +128,24 @@ body {
         grid-template-rows: auto minmax(100vh, auto) 82vh;
         animation: fade 3s;
 
+        .message {
+
+            &.alert {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 70vh;
+                justify-content: center;
+
+                img {
+                    height: 90px;
+                    background-color: rgba(78, 144, 230, 0.15);
+                    padding: apply-spacing(lv1);
+                    border-radius: apply-spacing(lv1-075);
+                }
+            }
+        }
+
         .header {
             display: flex;
             align-items: center;

@@ -71,6 +71,19 @@ body .container {
   grid-template-rows: auto minmax(100vh, auto) 82vh;
   animation: fade 3s;
 }
+body .container .message.alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  justify-content: center;
+}
+body .container .message.alert img {
+  height: 90px;
+  background-color: rgba(78, 144, 230, 0.15);
+  padding: 1em;
+  border-radius: 0.75em;
+}
 body .container .header {
   display: flex;
   align-items: center;
