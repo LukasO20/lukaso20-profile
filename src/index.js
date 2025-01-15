@@ -1,5 +1,5 @@
-import { sendEmail } from './api/email_provider/actions.js'
-import { iconChange } from './libs/js/interactivity_layout.js'
+import { sendEmail } from '../api/email_provider/actions.js'
+import { iconChange } from './js/interactivity_layout.js'
 
 const documentbody = document.body
 

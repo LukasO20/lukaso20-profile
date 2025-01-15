@@ -1,4 +1,4 @@
-import { createMessage, accentColors, clearFields, checkClass } from '../../libs/js/interactivity_layout.js'
+import { createMessage, accentColors, clearFields, checkClass } from '../../public/js/interactivity_layout.js'
 const API_URL = 'http://localhost:5000'
 
 const sendEmail = async (form) => {

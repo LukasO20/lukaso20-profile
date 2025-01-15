@@ -58,14 +58,14 @@ themeButton.addEventListener('click', function (e) {
 })
 
 const mapTheme = {
-    lightlayout: 'public/css/lighttheme.css',
-    darklayout: 'public/css/darktheme.css',
-    lightbg: `public/img/background_white_theme.svg`,
-    darkbg: `public/img/background_black_theme.svg`,
-    lightbgsscreen: `public/img/background_white_theme(sscreen).svg`,
-    darkbgsscreen: `public/img/background_black_theme(sscreen).svg`, 
-    lightbgmobile: `public/img/background_white_theme(mobile).svg`,
-    darkbgmobile: `public/img/background_black_theme(mobile).svg`
+    lightlayout: './css/lighttheme.css',
+    darklayout: './css/darktheme.css',
+    lightbg: `./img/background_white_theme.svg`,
+    darkbg: `./img/background_black_theme.svg`,
+    lightbgsscreen: `./img/background_white_theme(sscreen).svg`,
+    darkbgsscreen: `./img/background_black_theme(sscreen).svg`, 
+    lightbgmobile: `./img/background_white_theme(mobile).svg`,
+    darkbgmobile: `./img/background_black_theme(mobile).svg`
 }
 
 const setThemeLocalStorage = (e) => {

@@ -8,7 +8,7 @@ resume.on('click', function(){
 function downloadArchive () {
     const link = document.createElement('a')
     const language = languageLocalStorage(undefined, 'getLanguage', false)
-    link.href = `../libs/doc/${language === 'pt' ? 'resumept.pdf' : 'resumeen.pdf'}`
+    link.href = `../doc/${language === 'pt' ? 'resumept.pdf' : 'resumeen.pdf'}`
     link.download = 'Lucas_Oliveira_resume'
     
     document.body.appendChild(link)
@@ -85,7 +85,7 @@ function contentLanguageJSON (ptbr = undefined, en = undefined) {
     en === true ? typearchive = 'resume_english' : undefined 
 
     //LOAD TRANSLATE CONTENT
-    $.getJSON(`/libs/json/${typearchive}.json`, function (data) {  
+    $.getJSON(`../json/${typearchive}.json`, function (data) {  
         setContentJSON(data)
     })
 }

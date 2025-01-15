@@ -4,10 +4,17 @@
   "description": "****",
   "type": "module",
   "scripts": {
-    "build:html": "npx cpy index.html public",
-    "build:css": "sass libs/style:public/css",
-    "build": "npm run build:html && npm run build:css",
-    "start": "serve public"
+    "build:html": "npx cpy src/index.html public/ --flat",
+    "build:htmlpages": "npx cpy src/pages/**/* public/pages --flat",
+    "build:css": "sass src/libs/style:public/css",
+    "build:js": "babel src/libs/js --out-dir public/js",
+    "build:indexjs": "babel src/index.js --out-file public/index.js",
+    "build:img": "npx cpy src/libs/img/**/* public/img --flat",
+    "build:icon": "npx cpy src/libs/icon/**/* public/icon --flat",
+    "build:doc": "npx cpy src/libs/doc/**/* public/doc --flat",
+    "build:json": "npx cpy src/libs/json/**/* public/json --flat",
+    "build": "npm run build:html && npm run build:htmlpages && npm run build:css && npm run build:js && npm run build:indexjs && npm run build:img && npm run build:icon && npm run build:doc && npm run build:json",
+    "dev": "sass src/styles:public/css --watch"
   },
   "author": "",
   "license": "ISC",
@@ -20,10 +27,14 @@
     "mailgun.js": "^10.2.4",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.9",
-    "sass": "^1.80.6",
     "serve": "^14.2.4"
   },
   "devDependencies": {
-    "cpy-cli": "^5.0.0"
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-cli": "^6.26.0",
+    "cpy-cli": "^5.0.0",
+    "sass": "^1.83.3"
   }
 }
