@@ -1,4 +1,4 @@
-import { createMessage, accentColors, clearFields, checkClass } from '../public/js/interactivity_layout.js'
+import { createMessage, accentColors, clearFields, checkClass } from './interactivity_layout.js'
 const currentUrl = window.location.hostname
 const pathUrl = currentUrl === '127.0.0.1' ? 'http://localhost:5000' : 'https://lukaso20-profile.vercel.app'
 console.log('URL RIGHT NOW... ', pathUrl)
