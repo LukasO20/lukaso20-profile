@@ -1,4 +1,4 @@
-import { sendEmail } from '../api/email_provider/actions.js'
+import { sendEmail } from '../libs/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
 
 const documentbody = document.body
