@@ -1,5 +1,8 @@
-import { createMessage, accentColors, clearFields, checkClass } from '../../public/js/interactivity_layout.js'
-const API_URL = 'http://localhost:5000'
+import { createMessage, accentColors, clearFields, checkClass } from '../public/js/interactivity_layout.js'
+const currentUrl = window.location.hostname
+const pathUrl = currentUrl === '127.0.0.1' ? 'http://localhost:5000' : 'https://lukaso20-profile.vercel.app'
+console.log('URL RIGHT NOW... ', pathUrl)
+const API_URL = pathUrl
 
 const sendEmail = async (form) => {
     const container = document.querySelector('.container')
