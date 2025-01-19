@@ -8,7 +8,7 @@ resume.on('click', function(){
 function downloadArchive () {
     const link = document.createElement('a')
     const language = languageLocalStorage(undefined, 'getLanguage', false)
-    link.href = `../doc/${language === 'pt' ? 'resumept.pdf' : 'resumeen.pdf'}`
+    link.href = `../doc/${language === 'pt' ? 'Lucas-Oliveira-resume-pt.pdf' : 'Lucas-Oliveira-resume-en.pdf'}`;
     link.download = 'Lucas_Oliveira_resume'
     
     document.body.appendChild(link)
