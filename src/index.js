@@ -1,4 +1,4 @@
-import { sendEmail } from './js/actions.js'
+import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
 
 const documentbody = document.body
@@ -84,7 +84,7 @@ buttonSendEmail.addEventListener('click', function (e) {
             email: formEmail.email.value || null,
             message: formEmail.message.value || null
         }
-        sendEmail(formData)
+        sendEmailAction(formData)
     }
 })
 

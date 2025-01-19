@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { sendEmail } from './email_provider/send.js'
+import send from './email_provider/send.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 // routes set
-app.post('/email_provider/send', sendEmail)
+app.post('/email_provider/send', send)
 
 // server status
 app.get('/', (req, res) => {

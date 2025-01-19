@@ -49,6 +49,6 @@ const sendEmail = async (req, res) => {
         //console.error('Something was wrong to send e-mail: ', error)
         res.status(500).json({ success: false, error: error.message })
     }
-} 
+}
 
-export { sendEmail }
+export default sendEmail

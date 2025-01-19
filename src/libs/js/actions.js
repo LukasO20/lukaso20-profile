@@ -4,12 +4,12 @@ const pathUrl = currentUrl === '127.0.0.1' ? 'http://localhost:5000' : 'https://
 console.log('URL RIGHT NOW... ', pathUrl)
 const API_URL = pathUrl
 
-const sendEmail = async (form) => {
+const sendEmailAction = async (form) => {
     const container = document.querySelector('.container')
     let messageResult = ''
 
     try {
-        const response = await fetch(`${API_URL}/email_provider/send`, {
+        const response = await fetch(`${API_URL}/api/email_provider/send`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(form)
@@ -44,4 +44,4 @@ const sendEmail = async (form) => {
     }
 }
 
-export { sendEmail }
+export { sendEmailAction }
