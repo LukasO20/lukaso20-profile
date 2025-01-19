@@ -71,6 +71,10 @@ window.addEventListener('popstate', (e) => {
 window.addEventListener('load', () => {
     const route = location.hash.replace('#', '') || 'home'
     renderPage(route)
+
+    const year = new Date().getFullYear()
+    const yearElement = documentbody.querySelector('.footer--info .info--info-left span')
+    yearElement.innerHTML = year
 })
 
 const buttonSendEmail = documentbody
