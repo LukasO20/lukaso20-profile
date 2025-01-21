@@ -3,7 +3,7 @@
 
 # About
 Here you will find my personal website, which provides an overview about my professional experiences, services and skills.
-![Home page](libs/img/image_presentation.png)   
+![Home page](src/libs/img/image_presentation.png)   
 
 ### Useful links
 **Resume:** You can see my resume on https://lukaso20-profile.vercel.app/pages/resume.html
