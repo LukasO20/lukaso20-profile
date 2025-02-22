@@ -201,10 +201,20 @@ body {
                 }
 
                 .section-right--options {
+                    display: flex;
+                    gap: 0.5em;
+                    align-items: center;
                     margin: 0em apply-spacing(lv2);
 
                     .btn-bg-round {
                         cursor: pointer;
+
+                        &.translate--content {
+                            
+                            .translate--text {
+                                font-weight: 600;
+                            }
+                        }
                     }
                 }
             }

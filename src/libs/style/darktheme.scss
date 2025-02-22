@@ -65,10 +65,24 @@ body {
             * {
                 color: $color-accent !important;
             }
+
+            &.translate--content {
+
+                .translate--text {
+                    color: $color-accent !important;
+                }
+            }
         }
 
         &:active {
             background-color: $color-secondary-o5 !important;
+        }
+
+        &.translate--content {
+
+            .translate--text {
+                color: $color-white !important;
+            }
         }
     }
 

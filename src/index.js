@@ -1,5 +1,6 @@
 import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
+import { translate } from './js/translate_layout.js'
 
 const documentbody = document.body
 
@@ -9,6 +10,7 @@ const renderPage = (route) => {
     fetch(page)
         .then(response => response.text())
         .then(html => container.innerHTML = html)
+        .then(handleTranslate)
         .catch(error => {
             console.log('Error loading page: ', error)
             container.innerHTML = `<div class="message alert">
@@ -35,6 +37,15 @@ const handleIconChange = (header, iconChangeIcon) => {
             iconChange(iconChangeIcon, 'fa-circle-xmark', 'fa-bars')
         }
     }
+}
+
+const handleTranslate = () => {
+    return // FUNCTION PAUSE ON PRODUCTION ENVIROMENT
+    const contentFrom = documentbody.querySelector('.container')
+    const typeContentFrom = contentFrom.querySelector('main')
+    const getContent = contentFrom.querySelectorAll('[lang]')
+
+    translate(getContent, typeContentFrom.getAttribute('type'))
 }
 
 const linkManipulate = document.querySelectorAll('.link-page')
@@ -101,3 +112,16 @@ buttonExpandHeader.addEventListener('click', function (e) {
         handleIconChange(header, iconChangeIcon)
     }
 })
+
+const buttonTranslate = documentbody.querySelector('.translate--content')
+buttonTranslate.addEventListener('click', function () {
+    handleTranslate()
+})
+
+
+//PRODUCTION ENVIRONMENT (USED TO HANDLE ELEMENTOS ON PRODUCTION MODE (WILL BE REMOVED SOON))
+const handleProductionEnvironment = () => {
+    const removeElement = documentbody.querySelector('.translate--content')
+    removeElement.remove()
+}
+handleProductionEnvironment()
