@@ -15,21 +15,21 @@ const translate = (e, type) => {
     const translateContent = [...translate]
 
     try {
-        switch(type) {
-            case 'home':
-                fetch('json/pt_version_website.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('DATA FROM JSON PT - ', data)
-                    })
-                    .catch(error => console.error('Error during load json archive: ', error))
-                
-                    console.log('é um content home')
-                break
-            default:
-                console.log('ESTÁ FORA DO CONTENT DE CONTAINER')
-                break
-        }
+        fetch('json/pt_version_website.json')
+        .then(response => response.json())
+        .then(data => {
+            switch(type) {
+                case 'home':
+                                            
+                        console.log('é um content home')
+                    break
+                default:
+                    console.log('FORA DO SPA')
+                    break
+            }
+            console.log('DATA FROM JSON PT - ', data)
+        })
+        .catch(error => console.error('Error during load json archive: ', error))
 
     } catch (error) {
         throw new Error('Ops! Something got wrong during translation... ', error)       

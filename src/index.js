@@ -40,10 +40,19 @@ const handleIconChange = (header, iconChangeIcon) => {
 }
 
 const handleTranslate = () => {
-    return // FUNCTION PAUSE ON PRODUCTION ENVIROMENT
+    return // FUNCTION PAUSE ON PRODUCTION ENVIRONMENT
     const contentFrom = documentbody.querySelector('.container')
     const typeContentFrom = contentFrom.querySelector('main')
-    const getContent = contentFrom.querySelectorAll('[lang]')
+
+    // This object structure (getContent) is basis on json archives (en_version_website and pt_version_website)
+    const dynamicProperty = contentFrom.querySelector('.main').getAttribute('type')
+    if (!dynamicProperty) { throw new Error('The "getContent" object property: dynamicProperty is undefined') }
+
+    const getContent = {
+        header: contentFrom.querySelectorAll('.header [lang]'),
+        [dynamicProperty]: contentFrom.querySelectorAll('.main [lang]'),
+        footer: contentFrom.querySelectorAll('.footer [lang]')
+    }
 
     translate(getContent, typeContentFrom.getAttribute('type'))
 }
@@ -119,7 +128,7 @@ buttonTranslate.addEventListener('click', function () {
 })
 
 
-//PRODUCTION ENVIRONMENT (USED TO HANDLE ELEMENTOS ON PRODUCTION MODE (WILL BE REMOVED SOON))
+//PRODUCTION ENVIRONMENT (USED TO HANDLE ELEMENTS ON PRODUCTION MODE (WILL BE REMOVED SOON))
 const handleProductionEnvironment = () => {
     const removeElement = documentbody.querySelector('.translate--content')
     removeElement.remove()
