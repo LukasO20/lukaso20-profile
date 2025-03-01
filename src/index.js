@@ -54,7 +54,13 @@ const handleTranslate = () => {
         footer: contentFrom.querySelectorAll('.footer [lang]')
     }
 
-    translate(getContent, typeContentFrom.getAttribute('type'))
+    const getDOMElement = [
+        'header', 
+        `${[dynamicProperty]}`,
+        'footer' 
+    ]
+
+    translate(getContent, getDOMElement)
 }
 
 const linkManipulate = document.querySelectorAll('.link-page')

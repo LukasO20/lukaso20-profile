@@ -6,28 +6,30 @@ const translate = (e, type) => {
     let translate = e
 
     if (!translate) { throw new Error('Parameter translate(e) is null. Please, insert a value.')}
+    if (!type) { throw new Error('Parameter type is null. Please, insert a value.')}
 
     if (!Array.isArray(translate)) {
         translate = []
         translate.push(e)
     }
 
-    const translateContent = [...translate]
+    const translateContent = [...translate][0]
 
     try {
         fetch('json/pt_version_website.json')
         .then(response => response.json())
         .then(data => {
-            switch(type) {
-                case 'home':
-                                            
-                        console.log('é um content home')
-                    break
-                default:
-                    console.log('FORA DO SPA')
-                    break
-            }
-            console.log('DATA FROM JSON PT - ', data)
+            type.forEach(type => {
+                const translateContentJSON = data[type]
+                translateContent[type].forEach((typeDOM, index) => {
+                    const typeJSON = translateContentJSON[index]
+                    if (typeJSON) {
+                        typeDOM.textContent = typeJSON
+                    }
+                    console.log('TYPE DOM - ', typeDOM)
+                })
+            })
+            console.log('DATA FROM JSON PT - ', translateContentJSON)
         })
         .catch(error => console.error('Error during load json archive: ', error))
 
