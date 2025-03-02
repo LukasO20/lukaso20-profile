@@ -1,6 +1,6 @@
 import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
-import { translate } from './js/translate_layout.js'
+import { handleTranslate } from './js/translate_layout.js'
 
 const documentbody = document.body
 
@@ -10,9 +10,9 @@ const renderPage = (route) => {
     fetch(page)
         .then(response => response.text())
         .then(html => container.innerHTML = html)
-        .then(handleTranslate)
+        //.then(handleTranslate)
         .catch(error => {
-            console.log('Error loading page: ', error)
+            console.error('Error loading page: ', error)
             container.innerHTML = `<div class="message alert">
                     <img src="libs/icon/logo-dark-mode.svg" alt="logo">
                     <h1>404 - Page not found :[</h1>
@@ -37,29 +37,6 @@ const handleIconChange = (header, iconChangeIcon) => {
             iconChange(iconChangeIcon, 'fa-circle-xmark', 'fa-bars')
         }
     }
-}
-
-const handleTranslate = () => {
-    return // FUNCTION PAUSE ON PRODUCTION ENVIRONMENT
-    const contentFrom = documentbody.querySelector('.container')
-
-    // This object structure (getContent) is basis on json archives (en_version_website and pt_version_website)
-    const dynamicProperty = contentFrom.querySelector('.main').getAttribute('type')
-    if (!dynamicProperty) { throw new Error('The "getContent" object property: dynamicProperty is undefined') }
-
-    const getContent = {
-        header: contentFrom.querySelectorAll('.header [lang]'),
-        [dynamicProperty]: contentFrom.querySelectorAll('.main [lang]'),
-        footer: contentFrom.querySelectorAll('.footer [lang]')
-    }
-
-    const getDOMElement = [
-        'header', 
-        `${[dynamicProperty]}`,
-        'footer' 
-    ]
-
-    translate(getContent, getDOMElement)
 }
 
 const linkManipulate = document.querySelectorAll('.link-page')
@@ -126,12 +103,6 @@ buttonExpandHeader.addEventListener('click', function (e) {
         handleIconChange(header, iconChangeIcon)
     }
 })
-
-const buttonTranslate = documentbody.querySelector('.translate--content')
-buttonTranslate.addEventListener('click', function () {
-    handleTranslate()
-})
-
 
 //PRODUCTION ENVIRONMENT (USED TO HANDLE ELEMENTS ON PRODUCTION MODE (WILL BE REMOVED SOON))
 const handleProductionEnvironment = () => {

@@ -102,4 +102,15 @@ const iconChange = (iconFa, oldClass, newClass) => {
     }
 }
 
-export { createMessage, accentColors, clearFields, checkClass, iconChange }
+const toggleAtribute = (element, atribute) => {
+    if (!element) { throw new Error(`The parameter 'element' is null. Parameter required`) }
+    if (!atribute) { throw new Error(`The parameter 'atribute' is null. Parameter required`) }
+
+    if (element.hasAttribute(atribute)) {
+        element.removeAttribute(atribute)
+    } else {
+        element.setAttribute(atribute, "")
+    }
+}
+
+export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute }
