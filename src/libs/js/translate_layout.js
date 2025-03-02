@@ -20,7 +20,7 @@ const translate = (e, type) => {
         .then(response => response.json())
         .then(data => {
             type.forEach(type => {
-                const translateContentJSON = data[type]
+                const translateContentJSON = data[type] 
                 translateContent[type].forEach((typeDOM, index) => {
                     const typeJSON = translateContentJSON[index]
                     if (typeJSON) {

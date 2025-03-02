@@ -42,7 +42,6 @@ const handleIconChange = (header, iconChangeIcon) => {
 const handleTranslate = () => {
     return // FUNCTION PAUSE ON PRODUCTION ENVIRONMENT
     const contentFrom = documentbody.querySelector('.container')
-    const typeContentFrom = contentFrom.querySelector('main')
 
     // This object structure (getContent) is basis on json archives (en_version_website and pt_version_website)
     const dynamicProperty = contentFrom.querySelector('.main').getAttribute('type')
