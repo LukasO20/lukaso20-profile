@@ -1,5 +1,13 @@
 // variables
 const documentbody = document.body
+const documenthtml = document.documentElement
+const buttonTranslate = documentbody.querySelector('.translate--content')
+
+// change language
+buttonTranslate.addEventListener('click', function () {
+    const lang = this.getAttribute('lang')
+    setLanguageLocalStorage(lang), handleTranslate()
+})
 
 const translate = (e, type) => {
     //OS ELEMENTOS DE ATRIBUTO lang serão agrupados em um array
@@ -17,9 +25,10 @@ const translate = (e, type) => {
     }
 
     const translateContent = [...translate][0]
+    const localStorageLanguage = getLanguageLocalStorage()
 
     try {
-        fetch('json/pt_version_website.json')
+        fetch(`json/${localStorageLanguage}_version_website.json`)
         .then(response => response.json())
         .then(data => {
             type.forEach(type => {
@@ -33,6 +42,13 @@ const translate = (e, type) => {
                 })
             })
             console.log('DATA FROM JSON PT - ', data)
+
+        }).then(data => {
+            const textButtonTranslate = buttonTranslate.querySelector('.translate--text')
+            
+            textButtonTranslate.textContent = localStorageLanguage === 'pt' ? 'EN' : 'PT'
+            buttonTranslate.setAttribute('lang', localStorageLanguage === 'pt' ? 'en' : 'pt')
+            documenthtml.setAttribute('lang', localStorageLanguage === 'pt' ? 'pt-BR' : 'en')
         })
         .catch(error => console.error('Error during load json archive: ', error))
 
@@ -43,32 +59,26 @@ const translate = (e, type) => {
     console.log('TRANSLATE CONTENT - ', translateContent, ' TYPE - ', type)
 }
 
-const setLanguageLocalStorage = (lang, element) => {
-    if (lang && element) {
-        localStorage.languageLayout = element.setAttribute('lang', lang)
-    } else if (!element) {
-        throw new Error(`The parameter element: ${element} is not a DOM element. A DOM element is needed.`)
+const setLanguageLocalStorage = (lang) => {
+    if (!lang || typeof lang !== 'string') {
+        throw new Error(`The parameter lang is ${lang}. A string value (pt/en) is needed to set a language.`)
+    }
+
+    if (lang) {
+        localStorage.languageLayout = lang
     }
 }
 
-const getLanguageLocalStorage = (lang, element) => {
+const getLanguageLocalStorage = () => {
     if (!localStorage.languageLayout) {
         localStorage.setItem('languageLayout', 'en')
+        return
     }
 
-    if (lang && element) {
-        localStorage.languageLayout = element.setAttribute('lang', lang)
-    }
+    return localStorage.languageLayout
 }
 
-// change language
-const buttonTranslate = documentbody.querySelector('.translate--content')
-buttonTranslate.addEventListener('click', function () {
-    handleTranslate()
-})
-
 const handleTranslate = () => {
-    //return // FUNCTION PAUSE ON PRODUCTION ENVIRONMENT
     const contentFrom = documentbody.querySelector('.container')
 
     // This object structure (getContent) is basis on json archives (en_version_website and pt_version_website)

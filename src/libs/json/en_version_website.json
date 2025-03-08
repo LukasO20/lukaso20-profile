@@ -1,7 +1,35 @@
 {
+    "header": [
+        "About me", "Experiences", "Contact"
+    ],
     "home": [
         "Hello", "My name is Lucas,", "I'm Front-end Developer.", 
         "I like building front-end web structures that are simple, responsive, attractive and tailored to the client for better experience. I'm always open to discussing new projects, creative ideas, or opportunities to bring impactful front-end solutions to life.",
         "Let's conect!"
+    ],    
+    "experience": [
+        "My experiences.", "Skills", "Main Skills", "Other skills", "Junior Front-End Developer",
+        "2024 (January) - Current",
+        "Contribuing to a time management and productivity software, I performed maintence and applied improvements in web responsivity, software functions, created components with C# for Back-end, and other general improvements. The execution of tasks also involved utilizing technologies such as JavaScript, HTML, CSS, SASS, and jQuery to maintaining and improving the Front-end of the software.",
+        "Trainee", "2022 (September) - 2023 (December)",
+        "I worked on system of solutions for asset control and a project of time management and productivity software. Also I participated in the creation of project to management users of the company. And I learned more about technology ASP.NET MVC, language programming C# and projects management with GitHub.",
+        "See my full curriculum vitae"
+    ],
+    "contact": [
+        "Contact.", "Contact me if you want my help in your web project, have a proposal or just say hello.",
+        "Your name", "Your email", "Your message", "Send message", "OR",
+        "If you prefer text messaging only."
+    ],
+    "about": [
+        "Things about me.", "As Front-end Developer",
+        "I'm a front-end developer who uses JavaScript as the primary technology for both small and large-scale projects. I enjoy building attractive and responsive interfaces that enhance the overall user experience. My experience lies in web software development, where I craft each step of the software development process to align with the client's product vision, while also ensuring it reflects the realities of development. Every day, I strive to refine my skills and grow as a developer. I enjoy working in teams, as helping others and learning from them is very important to me.",
+        "As Freelancer to help with web softwares projects",
+        "I'm also a freelancer with experience in web projects, using JavaScript to develop client-side solutions and C# for server-side functionality. If you need improvements or solve problems in your web project I can help. I'll do my best to have you as my client.",
+        "contact me", "for more details.",
+        "If you like use freelance platforms, you can find me on"
+    ],
+    "footer": [
+        "Contacts", "Social", "Others", "My Curriculum", "© Developed by me :]",
+        "My Location:", "Brazil, São Paulo(SP)"
     ]
 }
