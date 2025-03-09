@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="pt-BR">
     <link rel="stylesheet" href="css/layout.css">
     <link id="themelink" rel="stylesheet" href="css/lighttheme.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -10,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/958084951b.js" crossorigin="anonymous"></script>
+    <script type="module">
+        import { defineLangHTML } from './js/translate_layout.js'
+        document.addEventListener("DOMContentLoaded", function() {
+            defineLangHTML()
+        })
+    </script>
     <title>Lucas Oliveira</title>
 </head>
 <body>

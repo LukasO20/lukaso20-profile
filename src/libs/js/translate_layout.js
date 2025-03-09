@@ -1,19 +1,16 @@
 // variables
 const documentbody = document.body
-const documenthtml = document.documentElement
 const buttonTranslate = documentbody.querySelector('.translate--content')
 
 // change language
 buttonTranslate.addEventListener('click', function () {
     const lang = this.getAttribute('lang')
     setLanguageLocalStorage(lang), handleTranslate()
+
+    location.reload()
 })
 
 const translate = (e, type) => {
-    //OS ELEMENTOS DE ATRIBUTO lang serão agrupados em um array
-    //O array irá percorrer elementos de acordo com o index e efetuará a tradução
-
-    //com elementos de atributo lang juntos em um array, evitará qualquer tipo de erro caso novos elementos sejam adicionados na tela
     let translate = e
 
     if (!translate) { throw new Error('Parameter translate(e) is null. Please, insert a value.')}
@@ -48,7 +45,7 @@ const translate = (e, type) => {
             
             textButtonTranslate.textContent = localStorageLanguage === 'pt' ? 'EN' : 'PT'
             buttonTranslate.setAttribute('lang', localStorageLanguage === 'pt' ? 'en' : 'pt')
-            documenthtml.setAttribute('lang', localStorageLanguage === 'pt' ? 'pt-BR' : 'en')
+            defineLangHTML()
         })
         .catch(error => console.error('Error during load json archive: ', error))
 
@@ -78,6 +75,12 @@ const getLanguageLocalStorage = () => {
     return localStorage.languageLayout
 }
 
+const defineLangHTML = () => {
+    if (localStorage.languageLayout) {
+        document.documentElement.lang = localStorage.languageLayout === 'pt' ? 'pt-BR' : 'en'
+    }
+}
+
 const handleTranslate = () => {
     const contentFrom = documentbody.querySelector('.container')
 
@@ -101,4 +104,4 @@ const handleTranslate = () => {
     translate(getContent, getDOMElement)
 }
 
-export { translate, handleTranslate, setLanguageLocalStorage, getLanguageLocalStorage }
+export { translate, handleTranslate, setLanguageLocalStorage, getLanguageLocalStorage, defineLangHTML }
