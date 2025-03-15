@@ -1,3 +1,5 @@
+import { setPlaceholder } from "./interactivity_layout.js"
+
 // variables
 const documentbody = document.body
 const buttonTranslate = documentbody.querySelector('.translate--content')
@@ -35,10 +37,22 @@ const translate = (e, type) => {
                     if (typeJSON) {
                         typeDOM.textContent = typeJSON
                     }
-                    console.log('TYPE DOM - ', typeDOM)
                 })
+
+                //Specific implementations besides elements
+                const genericType = type
+                switch (genericType) {
+                    case 'contact':
+                        const inputName = documentbody.querySelector('#name')
+                        const inputEmail = documentbody.querySelector('#email')
+                        const textarea = documentbody.querySelector('textarea[name="message"]')
+                        
+                        setPlaceholder(inputName, 'Digite seu nome aqui', 'Type your name here')
+                        setPlaceholder(inputEmail, 'Digite seu email aqui', 'Type your email here')
+                        setPlaceholder(textarea, 'Digite sua mensagem aqui', 'Type your message here')
+                        break
+                }
             })
-            console.log('DATA FROM JSON PT - ', data)
 
         }).then(data => {
             const textButtonTranslate = buttonTranslate.querySelector('.translate--text')
@@ -52,8 +66,6 @@ const translate = (e, type) => {
     } catch (error) {
         throw new Error('Ops! Something got wrong during translation... ', error)       
     }
-    
-    console.log('TRANSLATE CONTENT - ', translateContent, ' TYPE - ', type)
 }
 
 const setLanguageLocalStorage = (lang) => {

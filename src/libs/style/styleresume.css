@@ -248,4 +248,17 @@ section .div-section-head, .div-section-body {
     .items-socialmedia {
         display: none;
     }
+
+    /* Font adjustments */
+    h2 {
+        font-size: 14pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    p, h4, li, a, label {
+        font-size: 11pt;
+    }
 }

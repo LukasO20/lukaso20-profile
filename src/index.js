@@ -10,7 +10,7 @@ const renderPage = (route) => {
     fetch(page)
         .then(response => response.text())
         .then(html => container.innerHTML = html)
-        //.then(handleTranslate)
+        .then(handleTranslate)
         .catch(error => {
             console.error('Error loading page: ', error)
             container.innerHTML = `<div class="message alert">
@@ -109,4 +109,4 @@ const handleProductionEnvironment = () => {
     const removeElement = documentbody.querySelector('.translate--content')
     removeElement.remove()
 }
-handleProductionEnvironment()
+//handleProductionEnvironment()

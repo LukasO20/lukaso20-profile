@@ -1,3 +1,5 @@
+import { getLanguageLocalStorage } from './translate_layout.js'
+
 const createMessage = ({ elementCreate, elementTarget, elementClass = '', text = '', add = null, remove = null } = {}) => {
 
     const multipleValidation = 
@@ -113,4 +115,17 @@ const toggleAtribute = (element, atribute) => {
     }
 }
 
-export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute }
+const setPlaceholder = (element, ptVersion, enVersion) => {
+    const localStorageLanguage = getLanguageLocalStorage()
+
+    if (element) {
+        element.setAttribute(
+            'placeholder',
+            localStorageLanguage === 'pt' ? ptVersion : enVersion
+        )
+    } else {
+        console.error('Parameter (element) is necessary!')
+    }
+}
+
+export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute, setPlaceholder }
