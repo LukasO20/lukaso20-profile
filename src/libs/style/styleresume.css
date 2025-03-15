@@ -237,7 +237,13 @@ section .div-section-head, .div-section-body {
 
     .article-contacs .li-item.alt {
         display: block;
-    }    
+        text-decoration: none;
+    }
+    
+    .article-contacs .li-item.alt a {
+        text-decoration: none;
+        color: rgb(5, 69, 153);
+    } 
 
     .items-socialmedia {
         display: none;
