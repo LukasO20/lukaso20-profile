@@ -86,7 +86,7 @@ function contentLanguageJSON (ptbr = undefined, en = undefined) {
 
     //LOAD TRANSLATE CONTENT
     $.getJSON(`../json/${typearchive}.json`, function (data) {  
-        setContentJSON(data)
+        //setContentJSON(data)
     })
 }
 
