@@ -16,6 +16,9 @@ function downloadArchive () {
     document.body.removeChild(link)
 }
 
+//TRANSLATE (PT-EN)
+const buttonTranslate = $('.button-translate')
+
 function languageLocalStorage (e, nameCallOnly, callAllStatus) {
 
     const action = {
@@ -60,22 +63,19 @@ function languageLocalStorage (e, nameCallOnly, callAllStatus) {
     if (nameCallOnly) { return callOnly(nameCallOnly) }
     if (callAllStatus) { return callAll() }
 }
-languageLocalStorage(undefined, 'getLanguage', false)
-
-//TRANSLATE (PT-EN)
-const buttonTranslate = $('.button-translate')
+//languageLocalStorage(undefined, 'getLanguage', false)
 
 buttonTranslate.on('click', function () {
-    //Change activity
-    $(this).parent().find('.button-translate').removeClass('active') 
-    $(this).toggleClass('active')
+    // //Change activity
+    // $(this).parent().find('.button-translate').removeClass('active') 
+    // $(this).toggleClass('active')
 
-    //Change language content
-    const typeButton = $(this)
-    typeButton.hasClass('pt') ? contentLanguageJSON(ptbr = true, en = false)
-        : contentLanguageJSON(ptbr = false, en = true)
+    // //Change language content
+    // const typeButton = $(this)
+    // typeButton.hasClass('pt') ? contentLanguageJSON(ptbr = true, en = false)
+    //     : contentLanguageJSON(ptbr = false, en = true)
 
-    languageLocalStorage(typeButton, 'setLanguage', false)
+    // languageLocalStorage(typeButton, 'setLanguage', false)
 })
 
 function contentLanguageJSON (ptbr = undefined, en = undefined) {    

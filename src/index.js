@@ -10,7 +10,10 @@ const renderPage = (route) => {
     fetch(page)
         .then(response => response.text())
         .then(html => container.innerHTML = html)
-        .then(handleTranslate)
+        .then(html => {
+            container.innerHTML = html
+            handleTranslate('mainPage')
+        })
         .catch(error => {
             console.error('Error loading page: ', error)
             container.innerHTML = `<div class="message alert">
@@ -103,10 +106,3 @@ buttonExpandHeader.addEventListener('click', function (e) {
         handleIconChange(header, iconChangeIcon)
     }
 })
-
-//PRODUCTION ENVIRONMENT (USED TO HANDLE ELEMENTS ON PRODUCTION MODE (WILL BE REMOVED SOON))
-const handleProductionEnvironment = () => {
-    const removeElement = documentbody.querySelector('.translate--content')
-    removeElement.remove()
-}
-//handleProductionEnvironment()

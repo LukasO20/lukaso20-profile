@@ -1,4 +1,4 @@
-import { setPlaceholder } from "./interactivity_layout.js"
+import { setPlaceholder } from './interactivity_layout.js'
 
 // variables
 const documentbody = document.body
@@ -7,7 +7,8 @@ const buttonTranslate = documentbody.querySelector('.translate--content')
 // change language
 buttonTranslate.addEventListener('click', function () {
     const lang = this.getAttribute('lang')
-    setLanguageLocalStorage(lang), handleTranslate()
+    const toPage = this.getAttribute('toPage')
+    setLanguageLocalStorage(lang), handleTranslate(toPage)
 
     location.reload()
 })
@@ -93,24 +94,33 @@ const defineLangHTML = () => {
     }
 }
 
-const handleTranslate = () => {
-    const contentFrom = documentbody.querySelector('.container')
+const toPage = (page, contentFrom, dynamicProperty) => {
+    if (!page || !page === '' && (!contentFrom || contentFrom === '')) { throw new Error(`The parameter "${!page ? 'page' : 'contentFrom'}" is undefined. Is necessary set a ${!page ? 'name' : 'DOM'} value.`) }
+ 
+     // This object structure is basis on json archives (en_version_website and pt_version_website)
+    if (!dynamicProperty && page === 'mainPage') { throw new Error('The "getContent" object property: dynamicProperty is undefined') }
 
-    // This object structure (getContent) is basis on json archives (en_version_website and pt_version_website)
-    const dynamicProperty = contentFrom.querySelector('.main').getAttribute('type')
-    if (!dynamicProperty) { throw new Error('The "getContent" object property: dynamicProperty is undefined') }
-
-    const getContent = {
-        header: contentFrom.querySelectorAll('.header [lang]'),
-        [dynamicProperty]: contentFrom.querySelectorAll('.main [lang]'),
-        footer: contentFrom.querySelectorAll('.footer [lang]')
+    switch (page) {
+        case 'mainPage':
+            return {
+                header: contentFrom.querySelectorAll('.header [lang]'),
+                [dynamicProperty]: contentFrom.querySelectorAll('.main [lang]'),
+                footer: contentFrom.querySelectorAll('.footer [lang]'),
+            } 
+        case 'resumePage':
+            return {   
+                article: '',
+                section: ''
+            }
     }
+}
 
-    const getDOMElement = [
-        'header', 
-        `${[dynamicProperty]}`,
-        'footer' 
-    ]
+const handleTranslate = (page) => {
+    const contentFrom = documentbody.querySelector('.container')
+    const dynamicProperty = contentFrom.querySelector('.main').getAttribute('type')
+
+    const getContent = toPage(page, contentFrom, dynamicProperty)
+    const getDOMElement =  Object.keys(toPage(page, contentFrom, dynamicProperty))
 
     getLanguageLocalStorage()
     translate(getContent, getDOMElement)

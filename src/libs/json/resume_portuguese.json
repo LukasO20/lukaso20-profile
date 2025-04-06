@@ -1,46 +1,37 @@
 {
     "article": {
         "titles": [
-            "Tecnologias", "Outros", "Contatos"
+            "Habilidades", "Projetos", "Contatos"
         ],
-        "others": [
-            "Gerenciamento de projetos com Azure DevOps"
+        "sub_titles": [
+            "Tecnologias", "Bibliotecas & Frameworks", "Ferramentas & Plataformas"
         ],
-        "contacts": ["Celular: (55)1198542-5030"],
-        "last_p": ["São Paulo - SP, Brasil"]
+        "content": [
+            "Portfólio pessoal mais recente construído com uma arquitetura SPA baseada em JavaScript e SASS para estilos escaláveis e de fácil manutenção.",
+            "Email: lukinhaso2206@gmail.com", "Telefone: (55)1198542-5030", "São Paulo - SP, Brasil"
+        ]
     },
     "section": {
-        "titles_h2": ["Desenvolvedor Front-end"],
-        "titles_h3": ["Experiência", "Afixcode Soluções Administrativas Ltda", "Educação"],
-        "titles_h4": [
-            "Desenvolvedor Front-end Junior (Janeiro 2024 - Atual)",
-            "Estagiário (Setembro 2022 - Dezembro 2023)",
-            "Udemy",
-            "Universidade Cruzeiro do Sul"
+        "titles": [
+            "Experiência", "Educação"
         ],
-        "p_section": [
-            "Eu trabalhei em projetos web que utilizam JavaScript como a principal tecnologia no front-end. Adquiri mais experiência e conhecimento na criação de telas web responsivas, interfaces dinâmicas e aprimorando a experiência geral do usuário. Além disso, construí websites com a estrutura ASP.NET MVC, tecnologia C# para construir componentes e utilizei tecnologias que fazem parte do .NET Core. Minhas habilidades principais incluem HTML, CSS, SASS, JavaScript, TypeScript, React JS, jQuery, .NET Core e C#.",
-            "Contribuindo para um software de gerenciamento de tempo e produtividade, realizei manutenção e apliquei melhorias na responsividade web, funções do software, criei componentes com C# para o Back-end e outras melhorias gerais. A execução das tarefas também envolveu a utilização de tecnologias como JavaScript, HTML, CSS, SASS e jQuery para manter e melhorar o Front-end do software.",
-            "Eu trabalhei em sistemas de soluções para controle de ativos e em um projeto de software de gerenciamento de tempo e produtividade. Também participei da criação de um projeto para gerenciamento de usuários da empresa. E aprendi mais sobre a tecnologia ASP.NET MVC, a linguagem de programação C# e o gerenciamento de projetos com o GitHub.",
-            "Curso web moderno com JavaScript mais projetos - São Paulo, Brasil.",
-            "Graduação em Análise e Desenvolvimento de sistemas - São Paulo, Brasil."
+        "sub_titles": [
+            "Desenvolvedor Frontend Júnior (Janeiro 2024 - Atual)",
+            "Trainee (Setembro 2022 - Dezembro 2023)", "Conclusão - 2023", "Universidade Cruzeiro do Sul"
         ],
-        "li_section": [
-            "Desenvolvimento e manutenção web de sistema responsivo de produtividade, priorizando interfaces interativas e dinâmicas, com uso de HTML, CSS, SASS, JavaScript e jQuery.",
-            "Colaboração com a equipe na implementação de novos componentes para sistema de produtividade com as tecnologias C#, .NET e JavaScript.",
-            "Participação ativa em colaboração com a equipe nas revisões de código e planejamento.",
-            "Colaboração com a equipe na elaboração de novas ideias de componentes e funções para o sistema.",
-            "Utilização do Git e Azure DevOps para versionamento de código, garantindo o controle eficiente das alterações e atualizações.",
-            "Realização de check-ins regulares em branches específicas para novas funcionalidades, correções de bugs e melhorias de performance.",
-            "Depuração e correção de bugs críticos para sistema de produtividade, incluindo problemas de sincronização de dados e falhas de layout em navegadores executados em telas menores, resultando em uma experiência de usuário mais fluida.",
+        "content": [
+            "Desenvolvedor front-end especializado em criar interfaces acessíveis e dinâmicas, focado em proporcionar uma experiência digital aprimorada.",
+            "Desenvolvimento e manutenção de um sistema web produtivo responsivo, priorizando interfaces interativas e dinâmicas com HTML, CSS, SASS, JavaScript e jQuery.",
+            "Colaboração com a equipe na implementação de novos componentes para o sistema de produtividade utilizando tecnologias como C#, .NET e JavaScript.",
+            "Participação ativa em revisões de código da equipe e planejamento de projetos.",
+            "Colaboração com a equipe em sessões de brainstorming para criação de novas ideias para componentes e funcionalidades do sistema.",
+            "Utilização de Git e Azure DevOps para controle de versão, garantindo gerenciamento eficiente de alterações e atualizações.",
+            "Check-ins regulares em branches específicas para novas funcionalidades, correções de bugs e melhorias de desempenho.",
+            "Depuração e correção de bugs críticos no sistema de produtividade, incluindo problemas de sincronização de dados e falhas de layout em telas menores, resultando em uma experiência do usuário mais fluida.",
             "Colaboração com a equipe na aplicação de boas práticas de codificação e arquitetura de software.",
-            "Apoio no desenvolvimento e manutenção de sistemas web internos responsivos e plataformas de produtividade, garantindo funcionalidades estáveis e otimizadas para diferentes dispositivos.",
-            "Auxilio no desenvolvimento na criação de interfaces web com HTML, CSS, JS e resolução de bugs impactantes na interface do sistema.",
-            "Auxilio no desenvolvimento na criação de componentes com C#, .NET e resolução de bugs impactantes em requisições de dados."
-        ],
-        "label_section": [
-            "Conclusão - 2023",
-            "Conclusão - 2023"
+            "Suporte no desenvolvimento e manutenção de sistemas web internos responsivos e plataformas produtivas, garantindo funcionalidade estável e otimizada em diferentes dispositivos.",
+            "Assistência no desenvolvimento e criação de interfaces web com HTML, CSS e JavaScript, além da resolução de bugs impactantes na interface.",
+            "Suporte na criação e desenvolvimento de componentes com C# e .NET, além da correção de bugs críticos em processos de requisição de dados."
         ]
     }
 }
