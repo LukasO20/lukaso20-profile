@@ -30,7 +30,7 @@ const translate = (e, type, page) => {
     const url = `${page === 'mainPage' ? 
         'json/' + localStorageLanguage + '_version_website.json' :
         //'/public/json/resume_' + localStorageLanguage + '.json'}` //Choose this if it development version
-        'json/resume_' + localStorageLanguage + '.json'}` //Choose this if it production version
+        '/json/resume_' + localStorageLanguage + '.json'}` //Choose this if it production version
 
     try {
         fetch(url)
