@@ -128,4 +128,40 @@ const setPlaceholder = (element, ptVersion, enVersion) => {
     }
 }
 
-export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute, setPlaceholder }
+const loader = (action) => {
+    const container = document.querySelector('.container')
+    const body = document.querySelector('body')
+    const footer = container.querySelector('.footer')
+
+    const loader = {
+        show() {
+            const loader = document.createElement('div')
+            const spinner = document.createElement('div')
+
+            loader.classList.add('loader')
+            loader.classList.add(localStorage.theme === 'dark' ? 'dark' : 'light')
+            spinner.classList.add('loader-spinner')
+
+            loader.appendChild(spinner)
+            footer?.classList.add('hide')
+            body.style.overflowY = 'hidden'
+            body.appendChild(loader)
+        },
+        hide() {
+            const loader = document.querySelector('.loader')
+            if (loader) {
+                body.style.overflowY = 'auto'
+                footer?.classList.remove('hide')
+                loader.remove()
+            }
+        }
+    }
+
+    if (loader[action]) {
+        return loader[action]()
+    } else {
+        return console.error('Loader: Method not found...')
+    }
+}
+
+export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute, setPlaceholder, loader }

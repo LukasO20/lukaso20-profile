@@ -1,0 +1,28 @@
+{
+    "header": [
+        "Front-end developer specialized in creating accessible and dynamic interfaces, focused on offering a digital experience."
+    ],
+    "article": [
+        "Skills", "Technologies", "Libraries and Frameworks",
+        "Tools and Platforms", 
+        "Projects", "Latest personal portfolio built with a JavaScript-driven SPA architecture and SASS for scalable, maintainable styles.",
+        "Contacts", "Email: lukinhaso2206@gmail.com", "Phone: (55)1198542-5030", "São Paulo - SP, Brazil"
+    ],
+    "section": [
+        "Experience", "Junior Frontend Developer (January 2024 - Current)",
+        "Development and maintenance of a responsive productivity web system, prioritizing interactive and dynamic interfaces using HTML, CSS, SASS, JavaScript, and jQuery.",
+        "Collaboration with the team on implementing new components for the productivity system using technologies like C#, .NET, and JavaScript.",
+        "Active participation in team code reviews and project planning.",
+        "Team collaboration in brainstorming and creating new ideas for system components and features.",
+        "Utilization of Git and Azure DevOps for version control, ensuring efficient management of changes and updates.",
+        "Regular check-ins to specific branches for new features, bug fixes, and performance improvements.",
+        "Debugging and fixing critical bugs in the productivity system, including data synchronization issues and layout failures on smaller screens, resulting in a smoother user experience.",
+        "Trainee (September 2022 - December 2023)",
+        "Collaboration with the team in applying best practices for coding and software architecture.",
+        "Support in the development and maintenance of responsive internal web systems and productivity platforms, ensuring stable and optimized functionality across different devices.",
+        "Assistance in developing and creating web interfaces with HTML, CSS, and JavaScript, as well as resolving impactful interface bugs.",
+        "Support in developing and creating components with C# and .NET, as well as fixing critical bugs in data request processes.",
+        "Education", "Cruzeiro do Sul University", "Conclusion - 2023", 
+        "Technology Degree in Systems Analysis and Development - São Paulo, Brazil."
+    ]
+}

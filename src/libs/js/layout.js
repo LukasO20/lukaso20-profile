@@ -1,7 +1,7 @@
+import { loader } from './interactivity_layout.js'
+
 // variables
 const body = document.querySelector('body')
-const container = document.querySelector('.container')
-const footer = container.querySelector('.footer')
 const events = ['resize', 'scroll']
 
 // scroll functions
@@ -77,16 +77,19 @@ const setThemeLocalStorage = (e) => {
 const applyTheme = (linkElement) => {
     const theme = localStorage.getItem('theme') || 'dark'
     localStorage.setItem('theme', theme)
-    linkElement.href = mapTheme[`${theme}layout`]
 
-    themeButton.classList.remove('dark', 'light');
-    themeButton.classList.add(theme)
-
-    const iconButtonTheme = themeButton.querySelector('i')
-    const iconTheme = theme === 'dark' ? 'fa-moon' : 'fa-sun'
+    if (linkElement) {
+        linkElement.href = mapTheme[`${theme}layout`]
     
-    iconButtonTheme.classList.remove('fa-moon', 'fa-sun')
-    iconButtonTheme.classList.add(iconTheme)
+        themeButton.classList.remove('dark', 'light');
+        themeButton.classList.add(theme)
+    
+        const iconButtonTheme = themeButton.querySelector('i')
+        const iconTheme = theme === 'dark' ? 'fa-moon' : 'fa-sun'
+        
+        iconButtonTheme.classList.remove('fa-moon', 'fa-sun')
+        iconButtonTheme.classList.add(iconTheme)
+    }
 
     loader('show')
     loadImg(mapTheme[`${theme}bg`], (error, imageURL) => {
@@ -119,38 +122,6 @@ const loadImg = (imageURL, callback) => {
     img.onerror = () => callback(new Error(`Fail to load image: ${imageURL}`))
 }
 
-const loader = (action) => {
-    const loader = {
-        show() {
-            const loader = document.createElement('div')
-            const spinner = document.createElement('div')
-
-            loader.classList.add('loader')
-            loader.classList.add(localStorage.theme === 'dark' ? 'dark' : 'light')
-            spinner.classList.add('loader-spinner')
-
-            loader.appendChild(spinner)
-            footer.classList.add('hide')
-            body.style.overflowY = 'hidden'
-            body.appendChild(loader)
-        },
-        hide() {
-            const loader = document.querySelector('.loader')
-            if (loader) {
-                body.style.overflowY = 'auto'
-                footer.classList.remove('hide')
-                loader.remove()
-            }
-        }
-    }
-
-    if (loader[action]) {
-        return loader[action]()
-    } else {
-        return console.error('Loader: Method not found...')
-    }
-}
-
 const changeBGGround = (windowSize, currentTheme) => {
     if (windowSize <= 760) {
         body.style.backgroundImage = `url('${mapTheme[`${currentTheme}bgmobile`]}')`
@@ -172,5 +143,3 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 })
-
-export { loader }

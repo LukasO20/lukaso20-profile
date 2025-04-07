@@ -13,11 +13,12 @@ buttonTranslate.addEventListener('click', function () {
     location.reload()
 })
 
-const translate = (e, type) => {
+const translate = (e, type, page) => {
     let translate = e
 
     if (!translate) { throw new Error('Parameter translate(e) is null. Please, insert a value.')}
     if (!type) { throw new Error('Parameter type is null. Please, insert a value.')}
+    if (!page && page !== '') { throw new Error('Parameter page is null. Please, insert a value.') }
 
     if (!Array.isArray(translate)) {
         translate = []
@@ -26,9 +27,12 @@ const translate = (e, type) => {
 
     const translateContent = [...translate][0]
     const localStorageLanguage = getLanguageLocalStorage()
+    const url = `${page === 'mainPage' ? 
+        'json/' + localStorageLanguage + '_version_website.json' :
+        '/public/json/resume_' + localStorageLanguage + '.json'}`
 
     try {
-        fetch(`json/${localStorageLanguage}_version_website.json`)
+        fetch(url)
         .then(response => response.json())
         .then(data => {
             type.forEach(type => {
@@ -109,8 +113,9 @@ const toPage = (page, contentFrom, dynamicProperty) => {
             } 
         case 'resumePage':
             return {   
-                article: '',
-                section: ''
+                header: contentFrom.querySelectorAll('.header [lang]'),
+                article: contentFrom.querySelectorAll('.article [lang]'),
+                section: contentFrom.querySelectorAll('.section [lang]')
             }
     }
 }
@@ -123,7 +128,7 @@ const handleTranslate = (page) => {
     const getDOMElement =  Object.keys(toPage(page, contentFrom, dynamicProperty))
 
     getLanguageLocalStorage()
-    translate(getContent, getDOMElement)
+    translate(getContent, getDOMElement, page)
 }
 
 export { translate, handleTranslate, setLanguageLocalStorage, getLanguageLocalStorage, defineLangHTML }

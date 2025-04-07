@@ -1,4 +1,6 @@
 @use 'layout';
+@use 'lighttheme';
+@use 'darktheme';
 
 //COLORS
 $color-primary-light: #fff;
@@ -8,27 +10,83 @@ $color-secondary-shadow: #d4d4d4;
 
 body {
     background-color: $color-secondary-shadow;
+    background-image: none;
 
     .container {
-        grid-template-rows: none;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        width: 62em;
+        margin: 3em auto;
 
-        main {
-            position: relative;
+        .header {
             display: flex;
-            justify-content: center;
-            background-color: rgb(255, 255, 255);
-            margin: 3em auto;
-            width: 62em;
-            color: rgb(70, 70, 70);
-            padding: 4em layout.apply-spacing(lv3-05);
-            gap: 4.5em;
-    
+            justify-content: space-between;
+            align-items: start;
+            padding: layout.apply-spacing(lv2) layout.apply-spacing(lv3-05) layout.apply-spacing(lv1) layout.apply-spacing(lv3-05);
+            background-color: transparent;
+
             h1 {
                 font-size: 3rem;
                 color: $color-primary-accent;
                 margin: 0em;
             }
+
+            .div-header-head {
+                width: 60%;
+            }
+
+            .div-header-container {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                
+                label {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.2s ease-in-out;
+                    border-radius: 50%;
+                    border: 2px solid transparent;
+                    font-size: 0.85rem;
+                    width: 2em;
+                    height: 2em;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    &.download {
+                
+                        &:hover {
+                            border-color: $color-secondary;
+                        }
+                    }
+
+                    &.translate--content {
     
+                        * {
+                            color: $color-primary-accent !important;
+                            font-weight: 600;
+                        }
+    
+                        &:hover {
+
+                            * {
+                                color: lighttheme.$color-accent-complementary-primary !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            color: rgb(70, 70, 70);
+            padding: 0em layout.apply-spacing(lv3-05) layout.apply-spacing(lv3-05) layout.apply-spacing(lv3-05);
+            gap: 3.5em;
+            background-color: transparent;
+
             h3, h4 {
     
                 &.title {
@@ -38,18 +96,24 @@ body {
                         color: $color-primary-accent;
                     }
                 }
-            }
-    
-            article {
-                width: 35%;
-                margin-top: 9.2em;
-    
-                h3 {
-    
+
+                &.title-company {
+
+                    * {
+                        color: inherit;
+                    }
+                }
+
+                &.chld-h3 {
+
                     &:nth-child(n+2) {
                         margin-top: layout.apply-spacing(lv2);
                     }
                 }
+            }
+    
+            article {
+                width: 35%;
     
                 ul {
                     padding: 0em;
@@ -76,6 +140,13 @@ body {
                         }
                     }
                 }
+
+                .items-socialmedia {
+
+                    a {
+                        color: $color-primary-accent;
+                    }
+                }
             }
     
             section {
@@ -83,47 +154,9 @@ body {
                 text-align: justify;
                 display: flex;
                 flex-direction: column;
-                gap: layout.apply-spacing(lv1-05);
-                
-                .div-section-container {
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    right: 5em;
-                    gap: 0.25em;
-                    
-                    span {
-                        transition: 0.2s ease-in-out;
-                        padding: layout.apply-spacing(lv1-05);
-                        border-radius: 50%;
-                        border: 2px solid transparent;
-                        font-size: 0.85rem;
-    
-                        &.download {
-                    
-                            &:hover {
-                                border-color: $color-secondary;
-                                cursor: pointer;
-                            }
-                        }
-                    }
-    
-                    .button-translate {
-                    
-                        &:hover {
-                            font-weight: 600;
-                            cursor: pointer;
-                        }
-    
-                        &.active {
-                            font-weight: 600;
-                            color: $color-primary-accent;
-                        }
-                    }
-                }
-    
+
                 .div-section-body {
-    
+
                     ul {
                         padding-inline-start: layout.apply-spacing(lv2-05);
                     }
@@ -131,7 +164,7 @@ body {
                     .content-sb1 {
     
                         .company1 {
-                            margin-top: layout.apply-spacing(lv2-075);
+                            margin-top: 1.7em;
     
                             .child-title-company {
                                 font-weight: 500;
@@ -162,86 +195,59 @@ body {
 
 @media print {
 
-    /* BODY */
     body {
         background-color: $color-primary-light;
         line-height: 1.2em;
 
-        main {
-            margin: 0 auto; 
-            justify-content: inherit;
-            gap: 3.5em;
+        .container {
 
-            h1 {
-                margin: 0.75em 0em;
-            }
+            .header {
 
-            article {
-                width: 33.5%;
-                margin-top: 8.1em;
-
-                h3:first-child {
-                    margin-top: layout.apply-spacing(lv3-025);
+                h1 {
+                    margin: 0em 0em 0.67em 0em;
                 }
 
-                ul {
-
-                    &.article-contacs {
-                        
-                        .li-item {
+                .div-header-container {
+                    display: none;
+                }
+            }
     
-                            &.alt {
-                                display: inherit;
+            .main {
+                margin: 0 auto; 
+                justify-content: inherit;
+                gap: 3.5em;
+    
+                article {
+                    width: 33.5%;
+    
+                    ul {
+    
+                        &.article-contacs {
+                            
+                            .li-item {
+        
+                                &.alt {
+                                    display: inherit;
+                                    text-decoration: none;
+
+                                    a {
+                                        text-decoration: none;
+                                        color: $color-primary-accent;
+                                    } 
+                                }
                             }
                         }
                     }
-                }
-            }
 
-            section {
-                width: 57.5%;
-
-                .div-section-body {
-
-                    .content-sb1 {
-
-                        .company1 {
-                            margin-top: 1.6em;
-                        }
+                    .items-socialmedia {
+                        display: none;
                     }
                 }
-            }
-        }    
-    }
-
-    /* element */
-    .div-section-container {
-        opacity: 0;
-    }
-
-    .div-section-head, .div-section-body {
-        padding: 0em 0em 0em 3em;
-    }
-
-    .content-sb1 .company1  {
-        margin: 0em;
-    }
-
-    .about.chld-p {
-        margin: 1em 0em 1em 0em;
-    }
-
-    .article-contacs .li-item.alt {
-        display: block;
-        text-decoration: none;
-    }
     
-    .article-contacs .li-item.alt a {
-        text-decoration: none;
-        color: rgb(5, 69, 153);
-    } 
-
-    .items-socialmedia {
-        display: none;
+                section {
+                    width: 57.5%;
+                }
+            }    
+        }
     }
 }
