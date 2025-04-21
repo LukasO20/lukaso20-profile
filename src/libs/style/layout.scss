@@ -21,7 +21,7 @@ $font-size: (
 );
 
 @mixin apply-font-size($level) {
-    $value: map-get($font-size, $level);
+    $value: map.get($font-size, $level);
 
     @if $value != null {
         font-size: $value;
