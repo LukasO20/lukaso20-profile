@@ -23,7 +23,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            padding: layout.apply-spacing(lv2) layout.apply-spacing(lv3-05) layout.apply-spacing(lv1) layout.apply-spacing(lv3-05);
+            padding: 2rem 3.05rem 1rem 3.05rem; 
             background-color: transparent;
 
             h1 {
@@ -83,7 +83,7 @@ body {
             display: flex;
             justify-content: center;
             color: rgb(70, 70, 70);
-            padding: 0em layout.apply-spacing(lv3-05) layout.apply-spacing(lv3-05) layout.apply-spacing(lv3-05);
+            padding: 0rem 3.05rem 3.05rem 3.05rem; 
             gap: 3.5em;
             background-color: transparent;
 
@@ -107,7 +107,7 @@ body {
                 &.chld-h3 {
 
                     &:nth-child(n+2) {
-                        margin-top: layout.apply-spacing(lv2);
+                        @include layout.apply-margin(bottom, 2);
                     }
                 }
             }
@@ -125,7 +125,7 @@ body {
                     li {
     
                         h4 {
-                            margin: layout.apply-spacing(lv1-05) 0em;
+                            @include layout.apply-margin-fraction(y, 1-05);
                         }
                     }
     
@@ -158,7 +158,7 @@ body {
                 .div-section-body {
 
                     ul {
-                        padding-inline-start: layout.apply-spacing(lv2-05);
+                        padding-inline-start: 2.05rem;
                     }
     
                     .content-sb1 {

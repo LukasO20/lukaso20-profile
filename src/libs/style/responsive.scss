@@ -16,7 +16,7 @@
 
             .header {
                 position: relative;
-                padding: layout.apply-spacing(lv1);
+                @include layout.apply-padding(all, 1);
 
                 .header--section-right {
                     position: absolute;
@@ -28,7 +28,7 @@
                     width: 90.1%;
                     z-index: 1;
                     overflow: hidden;
-                    padding: 0em layout.apply-spacing(lv2-05);
+                    @include layout.apply-padding-fraction(x, 2-05);
                     opacity: 0;
                     transition: 0.3s ease-in-out;
 
@@ -41,8 +41,8 @@
                             text-transform: uppercase;
 
                             .ul--li {
-                                padding: layout.apply-spacing(lv1);
-                                border-radius: layout.apply-spacing(lv1);
+                                @include layout.apply-padding(all, 1);
+                                @include layout.apply-border(all, 1);
 
                                 &:hover {
 
@@ -62,7 +62,7 @@
                         &.end {
 
                             .btn-bg-round {
-                                padding: layout.apply-spacing(lv1);
+                                @include layout.apply-padding(all, 1);
                             }
                         }
                     }
@@ -82,7 +82,7 @@
                 &.expand {
 
                     .header--section-right {
-                        padding: layout.apply-spacing(lv2-05);
+                        @include layout.apply-padding-fraction(all, 2-05);
                         height: 100vh;
                         opacity: 1;
                     }
@@ -115,7 +115,7 @@
                                 justify-content: start;
 
                                 .title-left {
-                                    padding: layout.apply-spacing(lv1);
+                                    @include layout.apply-padding(all, 1);
 
                                     h1, h2 {
                                         text-align: center;
@@ -162,7 +162,7 @@
                         }
 
                         .main-experience {
-                            gap: layout.apply-spacing(lv1);
+                            @include layout.apply-gap-custom(1, 1);
                             flex-direction: column;
                             gap: 0em;
                         }
@@ -189,7 +189,7 @@
             .footer {
                 
                 .footer--shortcuts {
-                    padding: layout.apply-spacing(lv2) layout.apply-spacing(lv1);
+                    @include layout.apply-padding-custom(2, 1, 2, 1);
                     gap: 0em;
                     flex-wrap: wrap;
                     justify-content: space-between;
@@ -208,7 +208,7 @@
                 }
 
                 .footer--info {
-                    padding: layout.apply-spacing(lv2) layout.apply-spacing(lv1);
+                    @include layout.apply-padding-custom(2, 1, 2, 1);
                     justify-content: center;
                 }
             }
@@ -252,7 +252,7 @@
                             align-items: center;
                             justify-content: center;
                             list-style: none;
-                            gap: apply-spacing(lv2-05);
+                            @include layout.apply-gap-custom-fraction(2-05, 2-05);
         
                             .ul--li {
                                 
@@ -266,7 +266,7 @@
                                         text-decoration: none;
         
                                         label {
-                                            padding-bottom: apply-spacing(lv0-025);
+                                            @include layout.apply-padding-fraction(all, 0-25);
                                             border-bottom: solid 2px transparent;
                                         }
                                     }
@@ -293,7 +293,7 @@
                             .section--title {
     
                                 .title-left, .title-right {
-                                    padding: layout.apply-spacing(lv3-05) layout.apply-spacing(lv2);
+                                    @include layout.apply-padding-custom(3, 2, 3, 2);
                                 }
                             }
                         }

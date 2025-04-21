@@ -1,50 +1,264 @@
 @charset "UTF-8";
+@use "sass:map";
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
 
 //FONTS
 $font-family: 'Red Hat Display', 'Segoe UI', sans-serif;
 
 //FONT-SIZE LEVELS
-$font-size-levels: (
-    lv4-05: 3.5em,
-    lv3: 3em,
-    lv3-075: 2.75em,
-    lv3-05: 2.5em,
-    lv2: 2em,
-    lv2-075: 1.75em,
-    lv2-05: 1.5em,
-    lv1-015: 1.15em,
-    lv1: 1em,
-    lv1-09: 0.9em,
-    lv1-085: 0.85em,
+$font-size: (
+    3-50: 3.5rem,
+    3: 3rem,
+    2-75: 2.75rem,
+    2-50: 2.5rem,
+    2: 2rem,
+    1-75: 1.75rem,
+    1-50: 1.5rem,
+    1-015: 1.15rem,
+    1: 1rem,
+    0-90: 0.9rem,
+    0-85: 0.85rem,
 );
 
-@function apply-font-size($level) {
-    @return map-get($font-size-levels, $level);
+@mixin apply-font-size($level) {
+    $value: map-get($font-size, $level);
+
+    @if $value != null {
+        font-size: $value;
+    }
 }
 
-//SPACING LEVELS
-$spacing-levels: (
-    lv10: 10em,
-    lv7: 7em,
-    lv5: 5em,
-    lv3: 3em,
-    lv3-075: 2.75em,
-    lv3-05: 2.5em,
-    lv3-025: 2.25em,
-    lv2: 2em,
-    lv2-075: 1.75em,
-    lv2-05: 1.5em,
-    lv1: 1em,
-    lv1-075: 0.75em,
-    lv1-05: 0.5em,
-    lv0-025: 0.25em,
-    lv0-015: 0.15em,
-    lv0-01: 0.1em,
+//LEVELS
+$value-levels: (
+  0: 0rem,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 6rem,
+  7: 7rem,
+  8: 8rem,
+  9: 9rem,
+  10: 10rem
 );
 
-@function apply-spacing($level) {
-    @return map-get($spacing-levels, $level);
+$value-levels-fraction: (
+  0-05: 0.05rem,
+  0-25: 0.25rem,
+  0-50: 0.5rem,
+  0-75: 0.75rem,  
+  1-05: 1.05rem,
+  1-25: 1.25rem,
+  1-50: 1.5rem,
+  1-75: 1.75rem,
+  2-05: 2.05rem,
+  2-25: 2.25rem,
+  2-50: 2.5rem,
+  2-75: 2.75rem,
+  3-05: 3.05rem,
+  3-25: 3.25rem,
+  3-50: 3.5rem,
+  3-75: 3.75rem,
+  4-05: 4.05rem,
+  4-25: 4.25rem,
+  4-50: 4.5rem,
+  4-75: 4.75rem,
+  5-05: 5.05rem,
+  5-25: 5.25rem,
+  5-50: 5.5rem,
+  5-75: 5.75rem,
+);
+
+$value-level-percent: (
+    0: 0%,
+    1: 10%,
+    2: 20%,
+    3: 30%,
+    4: 40%,
+    5: 50%,
+    6: 60%,
+    7: 70%,
+    8: 80%,
+    9: 90%,
+    10: 100%
+);
+
+@mixin apply-margin($side, $level) {
+    $value: map.get($value-levels, $level);
+    @if $value != null {
+        @if $side == all {
+            margin: $value;
+        }
+        @else if $side == y {
+            margin: $value 0rem;
+        }
+        @else if $side == x {
+            margin: 0rem $value;
+        }
+        @else {
+            margin-#{$side}: $value;
+        }
+    }
+}   
+
+@mixin apply-margin-fraction($side, $level) {
+    $value: map.get($value-levels-fraction, $level);
+    @if $value != null {
+        @if $side == all {
+            margin: $value;
+        }
+        @else if $side == y {
+            margin: $value 0rem;
+        }
+        @else if $side == x {
+            margin: 0rem $value;
+        }
+        @else {
+            margin-#{$side}: $value;
+        }
+    }
+}
+
+@mixin apply-margin-custom($levelTop, $levelRight, $levelBottom, $levelLeft) {
+    $valueT: map.get($value-levels, $levelTop);
+    $valueR: map.get($value-levels, $levelRight);
+    $valueB: map.get($value-levels, $levelBottom);
+    $valueL: map.get($value-levels, $levelLeft);
+
+    margin: $valueT $valueR $valueB $valueL;
+}  
+
+@mixin apply-padding($side, $level) {
+    $value: map.get($value-levels, $level);
+    @if $value != null {
+        @if $side == all {
+            padding: $value;
+        }
+        @else if $side == y {
+            padding: $value 0rem;
+        }
+        @else if $side == x {
+            padding: 0rem $value;
+        }
+        @else {
+            padding-#{$side}: $value;
+        }
+    }
+}   
+
+@mixin apply-padding-fraction($side, $level) {
+    $value: map.get($value-levels-fraction, $level);
+    @if $value != null {
+        @if $side == all {
+            padding: $value;
+        }
+        @else if $side == y {
+            padding: $value 0rem;
+        }
+        @else if $side == x {
+            padding: 0rem $value;
+        }
+        @else {
+            padding-#{$side}: $value;
+        }
+    }
+}
+
+@mixin apply-padding-custom($levelTop, $levelRight, $levelBottom, $levelLeft) {
+    $valueT: map.get($value-levels, $levelTop);
+    $valueR: map.get($value-levels, $levelRight);
+    $valueB: map.get($value-levels, $levelBottom);
+    $valueL: map.get($value-levels, $levelLeft);
+
+    padding: $valueT $valueR $valueB $valueL;
+}  
+
+@mixin apply-gap-custom-fraction($levelRow, $levelColumn) {
+    $valueR: map.get($value-levels-fraction, $levelRow);
+    $valueC: map.get($value-levels-fraction, $levelColumn);
+
+    @if $valueR != null {
+        @if $valueC != null {
+            gap: $valueR $valueC;
+        }
+    }
+    @else if $valueC == null {
+        @if $valueR != null {
+            gap: $valueR 0em;
+        }
+    }
+    @else if $valueR == null {
+        @if $valueC != null {
+            gap: 0em $valueC;
+        }
+    }
+} 
+
+@mixin apply-gap-custom($levelRow, $levelColumn) {
+    $valueR: map.get($value-levels, $levelRow);
+    $valueC: map.get($value-levels, $levelColumn);
+
+    @if $valueR != null {
+        @if $valueC != null {
+            gap: $valueR $valueC;
+        }
+    }
+    @else if $valueC == null {
+        @if $valueR != null {
+            gap: $valueR 0em;
+        }
+    }
+    @else if $valueR == null {
+        @if $valueC != null {
+            gap: 0em $valueC;
+        }
+    }
+}   
+
+@mixin apply-border($side, $level) {
+    $value: map.get($value-levels, $level);
+    @if $value != null {
+        @if $side == all {
+            border-radius: $value;
+        }
+        @else if $side == y {
+            border-radius: $value 0rem;
+        }
+        @else if $side == x {
+            border-radius: 0rem $value;
+        }
+    }
+}   
+
+@mixin apply-border-fraction($side, $level) {
+    $value: map.get($value-levels-fraction, $level);
+    @if $value != null {
+        @if $side == all {
+            border-radius: $value;
+        }
+        @else if $side == y {
+            border-radius: $value 0rem;
+        }
+        @else if $side == x {
+            border-radius: 0rem $value;
+        }
+    }
+}
+
+@mixin apply-border-percent($side, $level) {
+    $value: map.get($value-level-percent, $level);
+    @if $value != null {
+        @if $side == all {
+            border-radius: $value;
+        }
+        @else if $side == y {
+            border-radius: $value 0&;
+        }
+        @else if $side == x {
+            border-radius: 0% $value;
+        }
+    }
 }
 
 * {
@@ -89,7 +303,7 @@ body {
     }
 
     .icon {
-        font-size: apply-font-size(lv2-05);
+        @include apply-font-size(1-50);
     }
 
     .btn-bg-round {
@@ -98,15 +312,15 @@ body {
         justify-content: center;
         height: 2.5em;
         width: 2.5em;
-        border-radius: 50%;
+        @include apply-border-percent(all, 5);
     }
 
     .btn-bg-round-flat {
         display: inline-flex;
         align-items: center;
         font-weight: 600;
-        padding: 0em apply-spacing(lv0-025);
-        border-radius: apply-spacing(lv1-05);
+        @include apply-padding-fraction(x, 0-25);
+        @include apply-border-fraction(all, 0-50);
         cursor: pointer;
 
         * {
@@ -114,9 +328,8 @@ body {
         }
 
         .icon {
-            font-size: apply-font-size(lv1-085);
-            margin: 0em apply-spacing(lv0-025);
-            margin-top: apply-spacing(lv0-025);
+            @include apply-font-size(1-50);
+            @include apply-margin-fraction(x, 0-25);
         }
     }
 
@@ -141,8 +354,8 @@ body {
                 img {
                     height: 90px;
                     background-color: rgba(78, 144, 230, 0.15);
-                    padding: apply-spacing(lv1);
-                    border-radius: apply-spacing(lv1-075);
+                    @include apply-border-fraction(all, 1-75);
+                    @include apply-padding(all, 1);
                 }
             }
         }
@@ -151,14 +364,14 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: apply-spacing(lv1) apply-spacing(lv5);
+            padding: 1rem 5rem;
 
             .header--section-left {
 
                 .section-left--logo {
 
                     img {
-                        border-radius: 0.7em;
+                        @include apply-border-fraction(all, 0-75);
                         padding: 0.35em 0.15em;
                     }
                 }
@@ -171,6 +384,7 @@ body {
             .header--section-right {
                 display: flex;
                 align-items: center;
+                @include apply-gap-custom(1, 1);
                 
                 .section-right--nav {
     
@@ -179,7 +393,9 @@ body {
                         align-items: center;
                         justify-content: center;
                         list-style: none;
-                        gap: apply-spacing(lv2-05);
+                        @include apply-gap-custom-fraction(2-05, 2-05);
+                        margin: 16px;
+                        padding: 0;
     
                         .ul--li {
                             
@@ -191,7 +407,7 @@ body {
                                 text-decoration: none;
 
                                 label {
-                                    padding-bottom: apply-spacing(lv0-025);
+                                    @include apply-padding-fraction(bottom, 0-25);
                                     border-bottom-style: solid;
                                     border-bottom-width: 2px;
                                     border-color: transparent;
@@ -203,9 +419,9 @@ body {
 
                 .section-right--options {
                     display: flex;
-                    gap: 0.5em;
+                    @include apply-gap-custom-fraction(0-50, 0-50);
                     align-items: center;
-                    margin: 0em apply-spacing(lv2);
+                    @include apply-margin-fraction(x, 2);
 
                     .btn-bg-round {
                         cursor: pointer;
@@ -216,6 +432,10 @@ body {
                                 font-weight: 600;
                             }
                         }
+                    }
+
+                    &.end {
+                        @include apply-gap-custom(1, 1);
                     }
                 }
             }
@@ -233,11 +453,11 @@ body {
                 .btn-bg-round.back-home {
                     position: absolute;
                     left: -7em;
-                    margin: apply-spacing(lv2-05) 1.34em 1.34em 1.34em;
+                    margin: 2rem 1.34rem 1.34rem 1.34rem;
                     cursor: pointer;
 
                     .icon {
-                        font-size: apply-font-size(lv1-015);
+                        @include apply-font-size(1-015);
                     }
                 }
 
@@ -247,9 +467,9 @@ body {
                     margin: 0em auto;
 
                     .card {
-                        margin: apply-spacing(lv1) 0em;
-                        border-radius: apply-spacing(lv1);
-                        padding: apply-spacing(lv1);
+                        @include apply-margin(y, 1);
+                        @include apply-border(all, 1);
+                        @include apply-padding(all, 1);
                         backdrop-filter: blur(0);
                         animation: blurEffect 1s ease-in-out 0.6s forwards;
                     }
@@ -275,14 +495,14 @@ body {
                                 .title-sec1 {
                                  
                                     h1 {
-                                        font-size: apply-font-size(lv4-05);    
+                                        @include apply-font-size(3-50);
                                     }
                                 }
                 
                                 .title-sec2 {
                 
                                     h1, h2 {
-                                        font-size: apply-font-size(lv3-05);
+                                        @include apply-font-size(2-50);
                                     }
                                 }
                             }
@@ -292,19 +512,19 @@ body {
                                 align-items: center;
         
                                 p {
-                                    font-size: apply-font-size(lv2-075);
+                                    @include apply-font-size(1-75);
                                     width: 20em;
         
                                     .title-right--title {
-                                        padding: 0em apply-spacing(lv1-05);
-                                        border-radius: apply-spacing(lv1);
+                                        padding: 0em 1.05rem;
+                                        @include apply-border(all, 1);
                                         cursor: pointer;
                                     }
                                 }
                             }
             
                             .title-left, .title-right {
-                                padding: apply-spacing(lv3-05) apply-spacing(lv3);
+                                padding: 3.05rem 3rem;
                             }
                         }
             
@@ -312,8 +532,8 @@ body {
                             flex: 1;
                             display: flex;
                             align-items: baseline;
-                            gap: 0em apply-spacing(lv1);
-                            padding: 0em apply-spacing(lv3);
+                            @include apply-gap-custom(all, 1);
+                            padding: 0em 3rem;
                                         
                             * {
                                 cursor: pointer;           
@@ -328,8 +548,7 @@ body {
 
                         p {
                             text-align: start;
-                            line-height: apply-spacing(lv2-075);
-                            font-size: apply-font-size(lv1);
+                            @include apply-font-size(1);
                         }
                     }
                 }
@@ -345,7 +564,7 @@ body {
                         .card--body {
 
                             > div {
-                                padding: 0em apply-spacing(lv1);
+                                @include apply-padding(x, 1);
                             }
 
                             .message-pop-up {
@@ -353,18 +572,18 @@ body {
                                 left: 50%;
                                 transform: translate(-50%, -25%);
                                 display: flex;
-                                padding: apply-spacing(lv1-05) apply-spacing(lv1);
-                                margin: apply-spacing(lv1) auto;
+                                padding: 1.05rem 1rem;
+                                margin: 1rem auto;
                                 width: max-content;
-                                border-radius: apply-spacing(lv1);
+                                @include apply-border(all, 1);
                             }
 
                             .body--section-top {
-                                padding: 0em apply-spacing(lv1);
-                                margin-top: apply-spacing(lv3-05);
+                                @include apply-padding(x, 1);
+                                @include apply-margin-fraction(top, 3-05);
                                 display: flex;
                                 align-items: center;
-                                gap: apply-spacing(lv1);
+                                @include apply-gap-custom(1, 1);
 
                                 .p-user-data {
                                     display: flex;
@@ -374,14 +593,14 @@ body {
 
                                     label {
                                         font-weight: 600;
-                                        margin-bottom: apply-spacing(lv1);
+                                        @include apply-margin(bottom, 1);
                                     }
 
                                     input {
-                                        padding: apply-spacing(lv1-075);
+                                        @include apply-padding(all, 1);
                                         background-color: transparent;
                                         border: solid 2px;
-                                        border-radius: apply-spacing(lv1-05);
+                                        @include apply-border-fraction(all, 0-50);
                                     }
                                 }
                             }
@@ -389,7 +608,7 @@ body {
                             .body--section-bottom {
                                 display: flex;
                                 flex-direction: column;
-                                padding: 0em apply-spacing(lv1);
+                                @include apply-padding(x, 1);
 
                                 .div-user-data-textarea {
                                     display: flex;
@@ -402,9 +621,9 @@ body {
                                     }
     
                                     textarea {
-                                        border-radius: 0.5em;
+                                        @include apply-border-fraction(all, 0-50);
                                         background-color: transparent;
-                                        padding: apply-spacing(lv1-075);
+                                        @include apply-padding(all, 1);
                                         border: solid 2px;
                                         resize: vertical;
                                         transition: none;
@@ -417,8 +636,8 @@ body {
                                     justify-content: center;
 
                                     .send-email {
-                                        padding: apply-spacing(lv1-075) apply-spacing(lv2-05);
-                                        margin: apply-spacing(lv2) 0em 0em 0em;
+                                        padding: 1rem 1.5rem;
+                                        margin: 2rem 0rem 0rem 0rem;
                                     }
                                 }
                             }
@@ -427,8 +646,8 @@ body {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
-                                gap: apply-spacing(lv1);
-                                margin: apply-spacing(lv3);
+                                @include apply-gap-custom(1, 1);
+                                @include apply-margin(all, 3);
 
                                 .line {
                                     display: inline-flex;
@@ -445,22 +664,22 @@ body {
 
                                 h3 {
                                     width: 100%;
-                                    margin-top: 0em;
-                                    margin-bottom: apply-spacing(lv2);
+                                    @include apply-margin(top, 0);
+                                    @include apply-margin(bottom, 2);
                                 }
 
                                 > label {
                                     display: flex;
                                     flex-direction: column;
                                     align-items: center;
-                                    margin: 0em apply-spacing(lv2-05) apply-spacing(lv2-05) apply-spacing(lv2-05);
-
+                                    margin: 0em 2.05rem 2.05rem 2.05rem;
+                                    
                                     > span {
-                                        margin-bottom: apply-spacing(lv1-05);
+                                        @include apply-margin-fraction(bottom, 1-05);
 
                                         .icon {
                                             font-size: 1rem;
-                                            margin: 0em apply-spacing(lv1-05);
+                                            @include apply-margin-fraction(x, 1-05);
                                         }
                                     }
 
@@ -479,7 +698,7 @@ body {
 
                     .main-experience {
                         display: flex;
-                        gap: apply-spacing(lv3);
+                        @include apply-gap-custom(1, 1);
 
                         .card {
 
@@ -488,8 +707,8 @@ body {
                             }
 
                             .icon {
-                                font-size: apply-font-size(lv1-085);
-                                margin: apply-spacing(lv0-025);
+                                @include apply-font-size(0-85);
+                                @include apply-margin-fraction(all, 0-25);
                             }
 
                             &.main-experience--aside {
@@ -503,12 +722,12 @@ body {
                                             display: flex;
                                             align-items: center;
                                             flex-wrap: wrap;
-                                            gap: apply-spacing(lv1-075);
+                                            @include apply-gap-custom-fraction(0-75, 0-75);
 
                                             label {
-                                                font-size: apply-font-size(lv1-09);
-                                                padding: apply-spacing(lv1-05);
-                                                border-radius: 2em;
+                                                @include apply-font-size(0-90);
+                                                @include apply-padding-fraction(all, 0-50);
+                                                @include apply-border(all, 2);
                                                 font-weight: 600;
                                             }
                                         }
@@ -520,10 +739,11 @@ body {
                                 flex: 5;
 
                                 .experiences--bottom {
+                                    @include apply-margin-fraction(y, 1-50);
 
                                     a {
-                                        border-radius: 2em;
-                                        padding: apply-spacing(lv0-025) apply-spacing(lv1-05);
+                                        @include apply-border(all, 2);
+                                        padding: 0.25rem 1.05rem;
                                         font-weight: 600;
                                     }
                                 }
@@ -545,30 +765,30 @@ body {
             }
 
             h3 {
-                margin: apply-spacing(lv1) apply-spacing(lv0-025);
+                @include apply-margin-fraction(all, 0-75);
             }
     
             .icon {
-                margin-right: apply-spacing(lv0-025);
-                font-size: apply-font-size(lv1);
+                @include apply-margin-fraction(right, 0-25);
+                @include apply-font-size(1);
             }
     
             .footer--shortcuts, .footer--info {
                 display: flex;
-                padding: apply-spacing(lv5);
+                @include apply-padding(all, 5);
                 flex: 1;
             }
 
             .footer--info {
-                padding: apply-spacing(lv3) apply-spacing(lv5);
+                padding: 3rem 5rem;
             }
     
             .footer--shortcuts {
-                gap: apply-spacing(lv2-05);
+                @include apply-gap-custom(2, 2);
                 align-items: center;
     
                 > div {
-                    margin-top: apply-spacing(lv5);
+                    @include apply-margin(top, 5);
                     display: flex;
                     flex-direction: column;
     
@@ -578,20 +798,21 @@ body {
                         padding: 0em;
                         list-style: none;
                         height: 10em;
-                        gap: 0.5em;
-    
+                        @include apply-gap-custom(0-50, 0-50);
+
                         li {
     
                             a {
                                 display: flex;
                                 align-items: center;
-                                padding: apply-spacing(lv1) apply-spacing(lv1-05);
-                                border-radius: apply-spacing(lv1-05);
+                                padding: 1rem 1.05rem;
+                                @include apply-border-fraction(all, 1-05);
+                                @include apply-gap-custom-fraction(0-50, 0-50);
                                 text-decoration: none;
                                 cursor: pointer;
 
-                                .icon {
-                                    margin-right: apply-spacing(lv1-05);
+                                * {
+                                    cursor: pointer;
                                 }
                             }
                         }
@@ -629,7 +850,13 @@ body {
                 .info--info-right {
                     display: flex;
                     align-items: center;
-                    gap: apply-spacing(lv1-05);
+                    @include apply-gap-custom-fraction(0-50, 0-50);
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        @include apply-gap-custom-fraction(0-50, 0-50);
+                    }
                 }
             }
         }
@@ -645,11 +872,11 @@ body {
         position: fixed;
         bottom: 10%;
         right: 10%;
-        gap: apply-spacing(lv1-05);
+        @include apply-gap-custom-fraction(0-50, 0-50);
 
         > label {
-            padding: apply-spacing(lv1-05);
-            border-radius: 50%;
+            @include apply-padding-fraction(all, 0-50);
+            @include apply-border-percent(all, 5);
             cursor: pointer;
             border-width: 2px;
             border-style: solid;
@@ -668,19 +895,11 @@ body {
 }
 
 @keyframes fade {
-    from { 
-        opacity: 0;
-    }
-    to { 
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes blurEffect {
-    0% {
-        backdrop-filter: blur(0);
-    }
-    100% {
-        backdrop-filter: blur(0.5em);
-    }
+    0% { backdrop-filter: blur(0); }
+    100% { backdrop-filter: blur(0.5em); } 
 }

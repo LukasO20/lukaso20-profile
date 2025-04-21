@@ -39,7 +39,6 @@ $color-gradient-primary: radial-gradient(circle, $color-white-o03, $color-primar
 body {
     margin: 0em;
     background-color: $color-primary-light;
-    background-image: $color-gradient-primary;
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -176,7 +175,6 @@ body {
                 &[type="about"], &[type="contact"], &[type="experience"] {
                     flex-direction: column;
                     width: 50%;
-                    margin: apply-spacing(lv1) auto;
 
                     .card {
                         color: $color-white;

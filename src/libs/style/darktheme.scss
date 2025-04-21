@@ -188,7 +188,6 @@ body {
                 &[type="about"], &[type="contact"], &[type="experience"] {
                     flex-direction: column;
                     width: 50%;
-                    margin: apply-spacing(lv1) auto;
 
                     .card {
                         color: $color-white;
