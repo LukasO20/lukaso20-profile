@@ -58,6 +58,7 @@ const createMessage = ({ elementCreate, elementTarget, elementClass = '', text =
 }
 
 const accentColors = (type, elements, classE) => {
+    const container = document.querySelector('.container')
     const elementAccentColor = container.querySelectorAll(elements)
     switch (type) {
         case 'add':
