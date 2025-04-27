@@ -1,6 +1,7 @@
 import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
 import { handleTranslate } from './js/translate_layout.js'
+import { customTitle } from './js/interactivity_layout.js'
 
 const documentbody = document.body
 
@@ -80,6 +81,9 @@ window.addEventListener('load', () => {
     const year = new Date().getFullYear()
     const yearElement = documentbody.querySelector('.footer--info .info--info-left span')
     yearElement.innerHTML = year
+
+    //OTHER FUNCTIONS
+    customTitle()
 })
 
 const buttonSendEmail = documentbody

@@ -1,4 +1,4 @@
-import { loader } from './interactivity_layout.js'
+import { loader, customTitle } from './interactivity_layout.js'
 
 // variables
 const body = document.querySelector('body')
@@ -83,12 +83,14 @@ const applyTheme = (linkElement) => {
     
         themeButton.classList.remove('dark', 'light');
         themeButton.classList.add(theme)
-    
+
         const iconButtonTheme = themeButton.querySelector('i')
         const iconTheme = theme === 'dark' ? 'fa-moon' : 'fa-sun'
         
         iconButtonTheme.classList.remove('fa-moon', 'fa-sun')
         iconButtonTheme.classList.add(iconTheme)
+
+        customTitle(themeButton, `Alterar tema para modo ${theme === 'dark' ? 'claro' : 'escuro'}`, `Change theme to ${theme === 'dark' ? 'light' : 'dark'} mode`)
     }
 
     loader('show')

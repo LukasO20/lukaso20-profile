@@ -331,6 +331,27 @@ body {
             @include apply-font-size(1-50);
             @include apply-margin-fraction(x, 0-25);
         }
+
+        .link-page {
+
+            .icon {
+                @include apply-font-size(0-85);
+            }
+        }
+    }
+
+    div.custom-title {
+        position: fixed;
+        display: block;
+        opacity: 0;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        transition: 0.3s ease-in-out;
+
+        &.show {
+            opacity: 1;
+        }
     }
 
     a {
@@ -453,7 +474,7 @@ body {
                 .btn-bg-round.back-home {
                     position: absolute;
                     left: -7em;
-                    margin: 2rem 1.34rem 1.34rem 1.34rem;
+                    margin: 1.44rem 1.34rem 1.34rem 1.34rem;
                     cursor: pointer;
 
                     .icon {
@@ -572,7 +593,7 @@ body {
                                 left: 50%;
                                 transform: translate(-50%, -25%);
                                 display: flex;
-                                padding: 1.05rem 1rem;
+                                padding: 0.5rem 1rem;
                                 margin: 1rem auto;
                                 width: max-content;
                                 @include apply-border(all, 1);

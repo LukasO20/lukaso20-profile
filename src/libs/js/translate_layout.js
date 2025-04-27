@@ -1,4 +1,4 @@
-import { setPlaceholder } from './interactivity_layout.js'
+import { setPlaceholder, customTitle } from './interactivity_layout.js'
 
 // variables
 const documentbody = document.body
@@ -57,6 +57,13 @@ const translate = (e, type, page) => {
                         setPlaceholder(inputEmail, 'Digite seu email aqui', 'Type your email here')
                         setPlaceholder(textarea, 'Digite sua mensagem aqui', 'Type your message here')
                         break
+                    case 'home':
+                        const themeLocalStorage = localStorage.theme
+                        const buttonLanguage = documentbody.querySelector('.translate--content')
+                        const buttonTheme = documentbody.querySelector('.theme--title')
+
+                        customTitle(buttonLanguage, 'Alterar idioma para Inglês', 'Change language to Portuguese')
+                        customTitle(buttonTheme, `Alterar tema para modo ${themeLocalStorage === 'dark' ? 'claro' : 'escuro'}`, `Change theme to ${themeLocalStorage === 'dark' ? 'light' : 'dark'} mode`)
                 }
             })
 

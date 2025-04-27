@@ -164,4 +164,64 @@ const loader = (action) => {
     }
 }
 
-export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute, setPlaceholder, loader }
+const customTitle = (element, ptVersion, enVersion) => {
+    const elements = document.querySelectorAll('[custom-title]')
+    const localStorageLanguage = getLanguageLocalStorage()
+
+    if (window.innerWidth <= 600) {
+        const tooltipRemove = document.querySelector('div.custom-title')
+        return tooltipRemove.remove()
+    }
+
+    if (typeof ptVersion === 'string' || typeof enVersion === 'string') {
+        return element.setAttribute('custom-title', localStorageLanguage === 'pt' ? ptVersion : enVersion)
+    }
+
+    const positionTooltip = (e, tooltip) => {
+        const tooltipWidth = tooltip.offsetWidth
+        const tooltipHeight = tooltip.offsetHeight
+
+        let left = e.target.offsetLeft - 35
+        let top = e.target.offsetTop + 50
+
+        if (left + tooltipWidth > window.innerWidth) {
+            left = window.innerWidth - tooltipWidth - 10
+        }
+        if (top + tooltipHeight > window.innerHeight) {
+            top = window.innerHeight - tooltipHeight - 10
+        }
+
+        tooltip.style.left = `${left}px`
+        tooltip.style.top = `${top}px`
+    }
+
+    const ensureTooltipExists = () => {
+        let customTitleElement = document.querySelector('div.custom-title')
+        !customTitleElement && (customTitleElement = createTitle())
+        return customTitleElement
+    }
+
+    const createTitle = () => {
+        const tooltip = document.createElement('div')
+        tooltip.className = 'custom-title'
+        document.body.appendChild(tooltip) 
+    }
+ 
+    if (elements) {
+        let customTitleElement = ensureTooltipExists() 
+
+        elements.forEach(dom => {
+            dom.addEventListener('mouseenter', (e) => {
+                customTitleElement = ensureTooltipExists() 
+                customTitleElement.textContent = dom.getAttribute('custom-title')
+                customTitleElement.classList.add('show')
+                positionTooltip(e, customTitleElement)
+            })
+            dom.addEventListener('mouseleave', (e) => {  
+                customTitleElement.classList.remove('show')
+            })
+        })
+    }
+}
+
+export { createMessage, accentColors, clearFields, checkClass, iconChange, toggleAtribute, setPlaceholder, loader, customTitle }
