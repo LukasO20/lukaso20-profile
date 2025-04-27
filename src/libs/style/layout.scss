@@ -348,7 +348,8 @@ body {
         border-radius: 1rem;
         font-size: 0.875rem;
         transition: 0.3s ease-in-out;
-
+        white-space: nowrap;
+        
         &.show {
             opacity: 1;
         }
