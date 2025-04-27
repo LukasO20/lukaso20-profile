@@ -181,7 +181,7 @@ const customTitle = (element, ptVersion, enVersion) => {
         const tooltipWidth = tooltip.offsetWidth
         const tooltipHeight = tooltip.offsetHeight
 
-        let left = e.target.offsetLeft - 35
+        let left = e.target.offsetLeft - 75
         let top = e.target.offsetTop + 50
 
         if (left + tooltipWidth > window.innerWidth) {
