@@ -1,9 +1,11 @@
 import formData from 'form-data'
 import Mailgun from 'mailgun.js'
 import dotenv from 'dotenv'
+import { getLanguageLocalStorage } from '../../public/js/translate_layout.js' //This path is only used to production environment
 
 dotenv.config()
 const mailgun = new Mailgun(formData)
+const serverLanguage = getLanguageLocalStorage()
 const mg = mailgun.client({
     username: 'api', 
     key: process.env.MAILGUN_API_KEY
@@ -22,7 +24,7 @@ const sendEmail = async (req, res) => {
         if (!name || !email || !message) {
             return res.status(400).json({ 
                 success: false,
-                error: 'Is necessary fill out all the fields.'
+                error: `${serverLanguage === 'pt' ? 'É necessário preencher todos os campos.' : 'Is necessary fill out all the fields.'}`
             })
         }
 
@@ -40,7 +42,7 @@ const sendEmail = async (req, res) => {
         if (response.id) {
             res.status(200).json({ 
                 success: true,
-                message: 'Message sent successfully!' 
+                message: `${serverLanguage === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!'}`
             })            
             //console.log('Message sent successfully!')
         } 

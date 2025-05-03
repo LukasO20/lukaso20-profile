@@ -1,17 +1,19 @@
 import { handleTranslate } from './translate_layout.js'
 import { getLanguageLocalStorage } from './translate_layout.js'
-import { loader } from './interactivity_layout.js'
+import { loader, customTitle } from './interactivity_layout.js'
 
 // -- RESUME FUNCTIONS --
-const resume = $('.resume-page-body .download')
+const documentbody = document.body
+const buttonresumeDownload = documentbody.querySelector('.resume-page-body .download')
+const buttonresumeLanguage = documentbody.querySelector('.resume-page-body .translate--content')
+const language = getLanguageLocalStorage()
 
-resume.on('click', function(){
+buttonresumeDownload.addEventListener('click', function(){
     downloadArchive()
 })
 
 function downloadArchive () {
     const link = document.createElement('a')
-    const language = getLanguageLocalStorage()
     link.href = `../doc/resume-${language}.pdf`;
     link.download = 'Lucas_Oliveira_resume'
     
@@ -23,7 +25,10 @@ function downloadArchive () {
 //TRANSLATE (PT-EN)
 window.addEventListener('load', () => {
     loader('show')
-    
+
+    customTitle(buttonresumeDownload, 'Baixar currículo', 'Download resume')
+    customTitle(buttonresumeLanguage, 'Alterar idioma para Inglês', 'Change language to Portuguese')
+
     setTimeout(function () {
         handleTranslate('resumePage')
     }, 500)
