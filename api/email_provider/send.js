@@ -1,11 +1,9 @@
 import formData from 'form-data'
 import Mailgun from 'mailgun.js'
 import dotenv from 'dotenv'
-import { getLanguageLocalStorage } from '../../public/js/translate_layout' //This path is only used to production environment
 
 dotenv.config()
 const mailgun = new Mailgun(formData)
-const serverLanguage = getLanguageLocalStorage()
 const mg = mailgun.client({
     username: 'api', 
     key: process.env.MAILGUN_API_KEY
@@ -20,7 +18,9 @@ const sendEmail = async (req, res) => {
     }
 
     try {
-        const { name, email, message } = req.body
+        const { name, email, message, language } = req.body
+        const serverLanguage = language
+
         if (!name || !email || !message) {
             return res.status(400).json({ 
                 success: false,
@@ -30,12 +30,12 @@ const sendEmail = async (req, res) => {
 
         //Message's configuration
         const data = {
-        from: `${name} <${email}>`,
-        to: process.env.RECIPIENT_EMAIL || 'lukinhaso2206@gmail.com',
-        subject: `Message from ${name}`,
-        text: message,
-        html: `<p>${message}</p>`,
-    };
+            from: `${name} <${email}>`,
+            to: process.env.RECIPIENT_EMAIL || 'lukinhaso2206@gmail.com',
+            subject: `Message from ${name}`,
+            text: message,
+            html: `<p>${message}</p>`,
+        };
 
         //Send E-mail
         const response = await mg.messages.create(process.env.MAILGUN_DOMAIN, data);

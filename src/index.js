@@ -1,6 +1,6 @@
 import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
-import { handleTranslate } from './js/translate_layout.js'
+import { handleTranslate, getLanguageLocalStorage } from './js/translate_layout.js'
 import { customTitle } from './js/interactivity_layout.js'
 
 const documentbody = document.body
@@ -95,7 +95,8 @@ buttonSendEmail.addEventListener('click', function (e) {
         const formData = {
             name: formEmail.name.value || null,
             email: formEmail.email.value || null,
-            message: formEmail.message.value || null
+            message: formEmail.message.value || null,
+            language: getLanguageLocalStorage() || 'en'
         }
         sendEmailAction(formData)
     }
