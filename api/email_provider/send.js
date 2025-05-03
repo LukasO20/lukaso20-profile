@@ -1,7 +1,7 @@
 import formData from 'form-data'
 import Mailgun from 'mailgun.js'
 import dotenv from 'dotenv'
-import { getLanguageLocalStorage } from '../../public/js/translate_layout.js' //This path is only used to production environment
+import { getLanguageLocalStorage } from '../../public/js/translate_layout' //This path is only used to production environment
 
 dotenv.config()
 const mailgun = new Mailgun(formData)
