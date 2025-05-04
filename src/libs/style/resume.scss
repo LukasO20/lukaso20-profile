@@ -7,6 +7,7 @@ $color-primary-light: #fff;
 $color-primary-accent: #054599;
 $color-secondary: #bebebe;
 $color-secondary-shadow: #d4d4d4;
+$color-accent-complementary-primary: #444;
 
 body {
     background-color: $color-secondary-shadow;
@@ -250,4 +251,48 @@ body {
             }    
         }
     }
+}
+
+/* SCROLL BAR SETTINGS */
+
+::-webkit-scrollbar {
+    width: 0.35em;
+}
+
+::-webkit-scrollbar-track {
+    background: $color-primary-light;
+    transition: .2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-accent-complementary-primary;
+    transition: .2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(160, 160, 160);
+}
+
+::-webkit-scrollbar-button:increment {
+    background-image: url('../icon/caret-down-solid.svg');
+    background-color: $color-primary-light;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 2em;
+    border-radius: 0px;
+    transition: .2s ease-in-out;
+}
+
+::-webkit-scrollbar-button:decrement {
+    background-image: url('../icon/caret-up-solid.svg');
+    background-color: $color-primary-light;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 2em;
+    border-radius: 0px;
+    transition: .2s ease-in-out;
+}
+
+::-webkit-scrollbar-button:increment:hover, ::-webkit-scrollbar-button:decrement:hover {
+    cursor: pointer;
 }
