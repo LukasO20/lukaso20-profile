@@ -14,6 +14,10 @@ const renderPage = (route) => {
         .then(html => {
             container.innerHTML = html
             handleTranslate('mainPage')
+
+            window.gtag('config', 'G-1C8TSL6SZ2', {
+                page_path: `/${route}`
+            })
         })
         .catch(error => {
             console.error('Error loading page: ', error)
