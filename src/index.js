@@ -14,10 +14,6 @@ const renderPage = (route) => {
         .then(html => {
             container.innerHTML = html
             handleTranslate('mainPage')
-
-            window.gtag('config', 'G-1C8TSL6SZ2', {
-                page_path: `/${route}`
-            })
         })
         .catch(error => {
             console.error('Error loading page: ', error)
@@ -50,7 +46,7 @@ const handleIconChange = (header, iconChangeIcon) => {
 const linkManipulate = document.querySelectorAll('.link-page')
 const linkPage = documentbody
 const header = documentbody.querySelector('.header')
-const iconChangeIcon = documentbody.querySelector('.menu--bar .icon')       
+const iconChangeIcon = documentbody.querySelector('.menu--bar .icon')
 
 linkPage.addEventListener('click', function (e) {
     const link = e.target.closest('.link-page')
@@ -58,7 +54,7 @@ linkPage.addEventListener('click', function (e) {
     if (link) {
         if (link.matches('.link-page')) {
             linkManipulate.forEach(e => {
-                e.classList.remove('active')   
+                e.classList.remove('active')
 
                 //manipulated class of navbar button when link event is external 
                 e.classList.toggle('active', e.getAttribute('href') === link.getAttribute('href'))
