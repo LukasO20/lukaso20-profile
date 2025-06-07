@@ -1,28 +1,30 @@
 {
     "header": [
-        "Desenvolvedor front-end especializado em criar interfaces acessíveis e dinâmicas, focado em proporcionar uma experiência digital aprimorada."
-    ],
-    "article": [
-       "Habilidades", "Tecnologias", "Bibliotecas e Frameworks",
-        "Ferramentas e Plataformas", 
-        "Projetos", "Portfólio pessoal mais recente construído com uma arquitetura SPA baseada em JavaScript e SASS para estilos escaláveis e de fácil manutenção.",
-        "Contatos", "Email: lukinhaso2206@gmail.com", "Celular: (55)1198542-5030", "São Paulo - SP, Brasil"
+        "Desenvolvedor front-end especializado em criar interfaces acessíveis e dinâmicas, focado em proporcionar uma experiência digital aprimorada.",
+        "Celular"
     ],
     "section": [
+        "Educação",
+        "Graduação em Análise e Desenvolvimento de Sistemas", "Universidade Cruzeiro do Sul - São Paulo, Brazil.",
         "Experiência", "Desenvolvedor Frontend Júnior (Janeiro 2024 - Atual)",
-        "Desenvolvimento e manutenção de um sistema web produtivo responsivo, priorizando interfaces interativas e dinâmicas com HTML, CSS, SASS, JavaScript e jQuery.",
-        "Colaboração com a equipe na implementação de novos componentes para o sistema de produtividade utilizando tecnologias como C#, .NET e JavaScript.",
+        "Desenvolvimento e manutenção de um sistema web responsivo de produtividade, utilizado por <strong>600+ clientes ativos,</strong> priorizando interfaces interativas e dinâmicas com HTML, CSS, SASS, JavaScript e jQuery.",
+        "Implementação de novos componentes para o sistema de produtividade utilizando tecnologias como C#, .NET e JavaScript.",
         "Participação ativa em revisões de código da equipe e planejamento de projetos.",
         "Colaboração com a equipe em sessões de planejamento para criação de novas ideias para componentes e funcionalidades do sistema.",
         "Utilização de Git e Azure DevOps para controle de versão, garantindo gerenciamento eficiente de alterações e atualizações.",
-        "Check-ins regulares em branches específicas para novas funcionalidades, correções de bugs e melhorias de desempenho.",
+        "Realização de check-ins regulares em branches específicas, implementando novos recursos e correções de bugs, o que resultou em um aumento de <strong>20% na eficiência do sistema.</strong>",
         "Depuração e correção de bugs críticos no sistema de produtividade, incluindo problemas de sincronização de dados e falhas de layout em telas menores, resultando em uma experiência do usuário mais fluida.",
         "Estágio (Setembro 2022 - Dezembro 2023)",
         "Colaboração com a equipe na aplicação de boas práticas de codificação e arquitetura de software.",
         "Suporte no desenvolvimento e manutenção de sistemas web internos responsivos e plataformas produtivas, garantindo funcionalidade estável e otimizada em diferentes dispositivos.",
         "Assistência no desenvolvimento e criação de interfaces web com HTML, CSS e JavaScript, além da resolução de bugs impactantes na interface.",
         "Suporte na criação e desenvolvimento de componentes com C# e .NET, além da correção de bugs críticos em processos de requisição de dados.",
-        "Educação",
-        "Universidade Cruzeiro do Sul", "Conclusão - 2023", "Graduação em Análise e Desenvolvimento de Sistemas - São Paulo, Brasil."
+        "Habilidades", "Tecnologias", "Bibliotecas e Frameworks", "Ferramentas e Plataformas",
+        "Projetos",
+        "Portfólio pessoal",
+        "visualizar github repository", "visualizar projeto",
+        "Portfólio pessoal mais recente construído com uma arquitetura SPA baseada em JavaScript e SASS para estilos escaláveis e de fácil manutenção.",
+        "Cursos",
+        "Curso web completo moderno com JavaScript", "visualizar certificado", "conclusão - 2023"
     ]
 }

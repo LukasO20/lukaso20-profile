@@ -41,7 +41,7 @@ const translate = (e, type, page) => {
                 translateContent[type].forEach((typeDOM, index) => {
                     const typeJSON = translateContentJSON[index]
                     if (typeJSON) {
-                        typeDOM.textContent = typeJSON
+                        typeDOM.innerHTML  = typeJSON
                     }
                 })
 
@@ -122,7 +122,7 @@ const toPage = (page, contentFrom, dynamicProperty) => {
         case 'resumePage':
             return {   
                 header: contentFrom.querySelectorAll('.header [lang]'),
-                article: contentFrom.querySelectorAll('.article [lang]'),
+                //article: contentFrom.querySelectorAll('.article [lang]'),
                 section: contentFrom.querySelectorAll('.section [lang]')
             }
     }
