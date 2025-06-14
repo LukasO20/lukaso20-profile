@@ -122,7 +122,6 @@ const toPage = (page, contentFrom, dynamicProperty) => {
         case 'resumePage':
             return {   
                 header: contentFrom.querySelectorAll('.header [lang]'),
-                //article: contentFrom.querySelectorAll('.article [lang]'),
                 section: contentFrom.querySelectorAll('.section [lang]')
             }
     }
