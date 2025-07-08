@@ -9,4 +9,4 @@ Here you will find my personal website, which provides an overview about my prof
 **Resume:** You can see my resume on https://lukaso20-profile.vercel.app/pages/resume.html
 
 ### Contact
-**Send me an e-mail:** [lukinhaso2206@gmail.com](mailto:lukinhaso2206@gmail.com)
+**Send me an e-mail:** [lucas.dev.oliveira@outlook.com](mailto:lucas.dev.oliveira@outlook.com)

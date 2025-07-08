@@ -31,7 +31,7 @@ const sendEmail = async (req, res) => {
         //Message's configuration
         const data = {
             from: `${name} <${email}>`,
-            to: process.env.RECIPIENT_EMAIL || 'lukinhaso2206@gmail.com',
+            to: process.env.RECIPIENT_EMAIL || 'lucas.dev.oliveira@outlook.com',
             subject: `Message from ${name}`,
             text: message,
             html: `<p>${message}</p>`,
