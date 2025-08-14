@@ -26,6 +26,9 @@
         "Personal portifolio",
         "view github repository", "view project",
         "Latest personal portfolio focused on my professional career and developer skills, built with a JavaScript-driven SPA architecture and SASS for scalable, maintainable styles. The website has become my main platform for sharing my professional journey and showcasing my projects.",
+        "in development",
+        "view github repository",
+        "Reach Goals is a modern web application designed to help users manage their daily activities, including tasks and personal goals. It allows users to create and organize activities with category and tag grouping, and offers multiple view modes, such as list, card, and calendar formats. Built with a strong focus on usability, scalability, and clean architecture, using technologies like React, Node.js, JavaScript, RESTful API, Prisma ORM, PostgreSQL and Design Patterns. The project is hosted on Vercel, featuring continuous deployment and a modular structure for fast iteration and easy maintenance.",
         "Courses",
         "Complete modern web course with JavaScript", "view certified", "conclusion - 2023"
     ]

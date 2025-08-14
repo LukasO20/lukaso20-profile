@@ -204,6 +204,15 @@ body {
                                 }
                             }
                         }
+
+                        &.sb4 {
+
+                            .ul-projects {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.330rem;
+                            }
+                        }
                     }
                 }
             }
