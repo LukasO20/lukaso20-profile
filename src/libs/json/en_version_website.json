@@ -8,8 +8,10 @@
         "Let's conect!"
     ],    
     "experience": [
-        "My experiences.", "Skills", "Main Skills", "Other skills", "Junior Front-End Developer",
-        "2024 (January) - Current",
+        "My experiences.", "Skills", "Main Skills", "Other skills", 
+        "Front-end Software Engineer", "2025 (September) - Current",
+        "I contributed to the development of a web-based product management platform for organizations, working from architectural design and technology selection through to implementation and client delivery. The project was built using React for the user interface and TypeScript for backend services, with a strong focus on scalability and software engineering best practices. We implemented JWT-based authentication, a request flow aligned with React's philosophy, and a modern, responsive UI using Tailwind CSS. On a daily basis, I collaborated on setting up development environments with Docker to streamline front-end workflows. I also actively participated in planning sessions with the Design team to create well-structured Figma layouts optimized for front-end implementation.",
+        "Junior Front-End Developer", "2024 (January) - 2025 (September)",
         "Contribuing to a time management and productivity software, I performed maintence and applied improvements in web responsivity, software functions, created components with C# for Back-end, and other general improvements. The execution of tasks also involved utilizing technologies such as JavaScript, HTML, CSS, SASS, and jQuery to maintaining and improving the Front-end of the software.",
         "Trainee", "2022 (September) - 2023 (December)",
         "I worked on system of solutions for asset control and a project of time management and productivity software. Also I participated in the creation of project to management users of the company. And I learned more about technology ASP.NET MVC, language programming C# and projects management with GitHub.",

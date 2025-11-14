@@ -8,8 +8,10 @@
         "Vamos conversar!"
     ],
     "experience": [
-        "Minhas experiências.", "Habilidades", "Habilidades principais", "Outras habilidades", "Desenvolvedor Front-end Júnior",
-        "2024 (Janeiro) - Atual",
+        "Minhas experiências.", "Habilidades", "Habilidades principais", "Outras habilidades",
+        "Engenheiro de Software Front-end", "2025 (Setembro) - Atual",
+        "Contribuí para o desenvolvimento de um software web de gerenciamento de produtos para organizações, atuando desde a definição da arquitetura e escolha das tecnologias até a implementação e entrega final aos clientes. O projeto foi construído com React na interface e TypeScript nos serviços de backend, priorizando escalabilidade e boas práticas de engenharia de software. Implementamos autenticação via JWT, um fluxo de requisições alinhado à filosofia do React e uma interface moderna e responsiva com o uso do Tailwind CSS. No dia a dia, colaborei na configuração de ambientes de desenvolvimento com Docker, otimizando o fluxo de trabalho do front-end. Também participei ativamente dos planejamentos com a equipe de Design, contribuindo para a criação de layouts em Figma bem estruturados e alinhados à implementação front-end.",
+        "Desenvolvedor Front-end Júnior", "2024 (Janeiro) - 2025 (Setembro)",
         "Contribuindo para um software de gerenciamento de tempo e produtividade, realizei manutenções e apliquei melhorias em responsividade web, funções de software, criei componentes com C# para Back-end, entre outras melhorias gerais. A execução das tarefas envolveu também a utilização de tecnologias como JavaScript, HTML, CSS, SASS e jQuery para manutenção e melhoria do Front-end do software.",
         "Estagiário", "2022 (Setembro) - 2023 (Dezembro)",
         "Trabalhei em um sistema de soluções para controle de ativos e em um projeto de software de gestão de tempo e produtividade. Também participei da criação de projeto para usuários gestores da empresa. E aprendi mais sobre tecnologia ASP.NET MVC, programação em linguagem C# e gerenciamento de projetos com GitHub.",
