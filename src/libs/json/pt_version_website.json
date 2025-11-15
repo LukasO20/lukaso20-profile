@@ -3,7 +3,7 @@
         "Sobre mim", "Experiências", "Contato"
     ],
     "home": [
-        "Olá", "Meu nome é Lucas,", "Eu sou Desenvolvedor Front-end", 
+        "Olá", "Meu nome é Lucas,", "Eu sou Engenheiro de Software Front-end", 
         "Eu gosto de construir estruturas web front-end simples, responsivas, atraentes e adaptadas ao cliente para uma melhor experiência. Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para dar vida a soluções front-end impactantes.",
         "Vamos conversar!"
     ],
@@ -23,10 +23,10 @@
         "Se você preferir apenas mensagens de texto."
     ],
     "about": [
-        "Coisas sobre mim.", "Como um Desenvolvedor Front-end",
-        "Sou um desenvolvedor front-end que usa JavaScript como tecnologia principal para projetos de pequeno e grande porte. Gosto de construir interfaces atraentes e responsivas que melhorem a experiência geral do usuário. Minha experiência está no desenvolvimento de software web, onde elaboro cada etapa do processo de desenvolvimento de software para alinhá-lo com a visão do produto do cliente, ao mesmo tempo que garanto que reflita a realidade do desenvolvimento. Todos os dias, me esforço para aprimorar minhas habilidades e crescer como desenvolvedor. Gosto de trabalhar em equipe, pois ajudar os outros e aprender com eles é muito importante para mim.",
+        "Coisas sobre mim.", "Como um Engenheiro de Software Front-end",
+        "Sou um engenheiro de software front-end que usa JavaScript como tecnologia principal para projetos de pequeno e grande porte. Gosto de construir interfaces atraentes e responsivas que melhorem a experiência geral do usuário. Minha atuação envolve todas as etapas do desenvolvimento web, alinhando a visão do produto à realidade técnica com responsabilidade e clareza para o cliente, ao mesmo tempo que garanto que reflita a realidade do desenvolvimento. Todos os dias, me esforço para aprimorar minhas habilidades e crescer como desenvolvedor. Gosto de trabalhar em equipe, pois ajudar os outros e aprender com eles é muito importante para mim.",
         "Como Freelancer para ajudar com projetos de software web",
-        "Sou freelancer especializado em projetos de software para web e tenho experiência utilizando JavaScript para desenvolver soluções client-side e C# para funcionalidades server-side. Se seu projeto web precisa de melhorias ou você está enfrentando algum desafio técnico, posso oferecer suporte para implementação de soluções eficazes e personalizadas. Estou comprometido em fornecer um trabalho de qualidade que atenda às suas necessidades e espero poder colaborar com você.",
+        "Sou freelancer especializado em projetos de software para web e tenho experiência utilizando JavaScript para desenvolver soluções client-side e C# ou TypeScript para funcionalidades server-side. Se seu projeto web precisa de melhorias ou você está enfrentando algum desafio técnico, posso oferecer suporte para implementação de soluções eficazes e personalizadas. Estou comprometido em fornecer um trabalho de qualidade que atenda às suas necessidades e espero poder colaborar com você.",
         "Entre em contato", "para mais detalhes sobre como posso ajudar!"
     ],
     "footer": [
