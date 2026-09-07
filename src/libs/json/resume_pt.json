@@ -10,7 +10,7 @@
         "Experiência",
         "Engenheiro de Software Front-end (Setembro 2025 - Atual)",
         "Desenvolvimento de plataforma web para gestão organizacional de usuários e produtos compartilhados entre aplicações, utilizando React, TypeScript, APIs e arquitetura de Micro Frontends, com hooks personalizados para encapsulamento de regras de negócio e escalabilidade.",
-        "Gerenciamento de estado assíncrono com React Query, aplicando invalidateQueries e setQueryData para otimizar revalidações de dados.",
+        "Modelagem e integração de dados relacionais utilizando PostgreSQL e Drizzle ORM, com arquitetura focada na propagação do estado reativo no client-side para mitigação de problemas de consistência de dados e loops de renderização.",
         "Desenvolvimento de testes unitários com Vitest para componentes front-end, integrados às pipelines de CI/CD para garantir qualidade contínua e prevenir regressões.",
         "Integração com soluções de Identity and Access Management (IAM), utilizando JWT para implementação de autenticação, autorização, gerenciamento de sessões e proteção de rotas privadas.",
         "Estruturação de ambientes de desenvolvimento isolados com Docker, segmentando os escopos de front-end e back-end.",
