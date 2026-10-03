@@ -2,6 +2,7 @@ import { sendEmailAction } from './js/actions.js'
 import { iconChange } from './js/interactivity_layout.js'
 import { handleTranslate, getLanguageLocalStorage } from './js/translate_layout.js'
 import { customTitle } from './js/interactivity_layout.js'
+import { projectsRender } from './js/projects.js'
 
 const documentbody = document.body
 
@@ -13,6 +14,7 @@ const renderPage = (route) => {
         .then(html => container.innerHTML = html)
         .then(html => {
             container.innerHTML = html
+            projectsRender()
             handleTranslate('mainPage')
         })
         .catch(error => {
@@ -51,21 +53,20 @@ const iconChangeIcon = documentbody.querySelector('.menu--bar .icon')
 linkPage.addEventListener('click', function (e) {
     const link = e.target.closest('.link-page')
 
-    if (link) {
-        if (link.matches('.link-page')) {
-            linkManipulate.forEach(e => {
-                e.classList.remove('active')
+    if (link.matches('.link-page')) {
+        linkManipulate.forEach(e => {
+            e.classList.remove('active')
 
-                //manipulated class of navbar button when link event is external 
-                e.classList.toggle('active', e.getAttribute('href') === link.getAttribute('href'))
-            })
-            link.classList.add('active')
-            header.classList.remove('expand')
-            handleIconChange(header, iconChangeIcon)
+            //manipulated class of navbar button when link event is external 
+            e.classList.toggle('active', e.getAttribute('href') === link.getAttribute('href'))
+        })
+        
+        link.classList.add('active')
+        header.classList.remove('expand')
+        handleIconChange(header, iconChangeIcon)
 
-            const route = link.getAttribute('href').replace('#', '')
-            handleRouteChange(route)
-        }
+        const route = link.getAttribute('href').replace('#', '')
+        handleRouteChange(route)
     }
 })
 

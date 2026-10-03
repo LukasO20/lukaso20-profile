@@ -5,7 +5,7 @@
 // Mobile (standard resolution 480px)
 
 // -- 600px
-@media (max-width: 600px) {
+@media (max-width: 760px) {
     body {
         background-size: auto;
 
@@ -101,7 +101,7 @@
                     }
 
                     h1 {
-                        text-align: center;
+                        text-align: end;
                     }
 
                     &[type="home"] {
@@ -149,7 +149,6 @@
                     &[type="about"] {
 
                         h1 {
-                            text-align: end;
                             margin-right: 0.5em;
                         }
                     }
@@ -157,7 +156,6 @@
                     &[type="experience"] {
 
                         h1 {
-                            text-align: end;
                             margin-right: 0.5em;
                         }
 
@@ -167,6 +165,16 @@
                             gap: 0em;
                         }
                     }
+
+                    &[type="projects"] {
+
+                        .card { 
+
+                            .card--banner {
+                                display: none;
+                            }
+                        }
+                    }  
 
                     &[type="contact"] {
 
@@ -194,8 +202,8 @@
                     flex-wrap: wrap;
                     justify-content: space-between;
                     align-items: flex-start;
-                    width: 18.5em;
                     margin: auto;
+                    @include layout.apply-gap-custom-fraction(0, 0-25);
 
                     > div {
                         margin-top: 0;
@@ -221,7 +229,7 @@
 }
 
 // -- 1024px
-@media (min-width: 761px) and (max-width: 1024px) {
+@media (min-width: 761px) and (max-width: 1048px) {
     body {
         background-size: auto;
 
@@ -281,9 +289,19 @@
     
                 .main {
     
-                    &[type="about"], &[type="contact"], &[type="experience"] {                        
+                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {                        
                         width: 70%;
                     }
+
+                    &[type="projects"] {
+
+                        .card { 
+
+                            .card--banner {
+                                display: none;
+                            }
+                        }
+                    }  
     
                     &[type="home"] {
                         width: 95%;
@@ -307,7 +325,7 @@
 // Desktop (standard resolution 1600px)
 
 // -- 1280px
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1049px) and (max-width: 1280px) {
     body {
         background-size: auto;
 
@@ -321,6 +339,9 @@
                         width: 60%;
                     }
 
+                    &[type="projects"] {
+                        width: 80%;
+                    }     
                 }
             }
         }
@@ -344,6 +365,10 @@
     
                     &[type="about"], &[type="contact"], &[type="experience"] {
                         width: 40%;
+                    }
+
+                    &[type="projects"] {
+                        width: 60%;
                     }
 
                     &[type="home"] {
@@ -379,8 +404,8 @@
     
                 .main {
     
-                    &[type="about"], &[type="contact"], &[type="experience"] {
-                        width: 35%;
+                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
+                        width: 45%;
                     }
 
                     &[type="home"] {
@@ -422,8 +447,8 @@
     
                 .main {
     
-                    &[type="about"], &[type="contact"], &[type="experience"] {
-                        width: 25%;
+                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
+                        width: 35%;
                     }
 
                     &[type="home"] {

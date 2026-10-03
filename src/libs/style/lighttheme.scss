@@ -177,13 +177,12 @@ body {
                     background-color: $color-accent-o15;
                 }
 
-                &[type="about"], &[type="contact"], &[type="experience"] {
+                &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
                     flex-direction: column;
                     width: 50%;
 
                     .card {
-                        color: $color-white;
-                        background-color: $color-white-o03;
+                        background-color: $color-accent-o15;
                     }
                 }
 
@@ -224,7 +223,6 @@ body {
                 &[type="about"] {
                     
                     .card {
-                        background-color: $color-accent-o15;
 
                         * {
                             text-shadow: none;
@@ -236,7 +234,6 @@ body {
                 &[type="contact"] {
 
                     .card {
-                        background-color: $color-accent-o15;
 
                         h3, label, span {
                             color: $color-accent-complementary-primary;
@@ -323,7 +320,6 @@ body {
                     .main-experience {
 
                         .card {
-                            background-color: $color-accent-o15;
 
                             a {
                                 color: $color-accent;
@@ -368,6 +364,47 @@ body {
 
                                     a {
                                         background-color: $color-accent-o15;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &[type="projects"] {
+
+                    .main-projects {
+
+                        .card {
+
+                            .card--section { 
+                            
+                                h3, p {
+                                        color: $color-accent-complementary-primary;
+                                }
+
+                                .chips {
+                                    border-top-color: $color-accent-o15;
+
+                                    .chip {
+                                        background-color: $color-accent-o15;
+                                        color: $color-accent; 
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                a {
+                                    
+                                    * {
+                                        color: $color-accent;
+                                    }
+
+                                    &:hover {
+                                        color: $color-accent-shadow;
+
+                                        * {
+                                            color: $color-accent-shadow;
+                                        }
                                     }
                                 }
                             }

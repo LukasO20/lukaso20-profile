@@ -363,6 +363,47 @@ body {
                         }
                     }
                 }
+
+                &[type="projects"] {
+
+                    .main-projects {
+
+                        .card {
+
+                            .card--section { 
+                            
+                                h3, p {
+                                    color: $color-white;
+                                }
+
+                                .chips {
+                                    border-top-color: $color-accent-o15;
+
+                                    .chip {
+                                        background-color: $color-accent-o15;
+                                        color: $color-accent; 
+                                        font-weight: 600;
+                                    }
+                                }
+                            
+                                a {
+                                    
+                                    * {
+                                            color: $color-accent;
+                                    }
+
+                                    &:hover {
+                                        color: $color-accent-shadow;
+
+                                        * {
+                                            color: $color-accent-shadow;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

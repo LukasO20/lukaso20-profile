@@ -528,6 +528,74 @@ body {
                     }
                 }
 
+                &[type="projects"] {
+                    flex-direction: column;
+                    width: 70%;
+                    margin: 0em auto;
+
+                    .card {
+                        @include apply-margin(y, 1);
+                        @include apply-border(all, 1);
+                        backdrop-filter: blur(0);
+                        animation: blurEffect 1s ease-in-out 0.6s forwards;
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+
+                        .card--banner,
+                        .card--section {
+                            display: flex;
+                        }
+
+                        .card--banner {
+                            min-width: 506px;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .card--section {
+                            flex-direction: column;
+                            @include apply-padding(x, 1);
+
+                            .card--section-header {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                a {
+                                    text-decoration: none;
+                                    font-weight: 600;
+
+                                    .icon {
+                                        @include apply-font-size(0-85);
+                                        @include apply-margin-fraction(all, 0-25);
+                                    }
+                                }
+                            }
+                            
+                            .chips {
+                                display: flex;
+                                align-items: center;
+                                border-top: solid 2px;
+                                flex-wrap: wrap;
+                                @include apply-gap-custom-fraction(all, 0-75);
+                                @include apply-padding-fraction(all, 0-50);
+
+                                .chip {
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    @include apply-font-size(0-90);
+                                    @include apply-padding-fraction(all, 0-50);
+                                    @include apply-border(all, 2);
+                                    @include apply-margin-fraction(y, 0-25);
+                                }
+                            }
+                        }
+                    }
+                }
+
                 &[type="home"] {
                     width: 75%;
                     margin: 0em auto;
