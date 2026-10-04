@@ -28,13 +28,29 @@ $color-accent-o03: rgba($color-accent, 0.035);
 $color-accent-o05: rgba($color-accent, 0.055);
 $color-accent-o07: rgba($color-accent, 0.075);
 $color-accent-o15: rgba($color-accent, 0.15);
-$color-accent-complementary-primary-o7: rgba($color-accent-complementary-primary, 0.75);
-$color-accent-complementary-primary-o5: rgba($color-accent-complementary-primary, 0.55);
-$color-accent-complementary-primary-o3: rgba($color-accent-complementary-primary, 0.35);
-$color-accent-complementary-primary-o15: rgba($color-accent-complementary-primary, 0.15);
+$color-accent-complementary-primary-o7: rgba(
+    $color-accent-complementary-primary,
+    0.75
+);
+$color-accent-complementary-primary-o5: rgba(
+    $color-accent-complementary-primary,
+    0.55
+);
+$color-accent-complementary-primary-o3: rgba(
+    $color-accent-complementary-primary,
+    0.35
+);
+$color-accent-complementary-primary-o15: rgba(
+    $color-accent-complementary-primary,
+    0.15
+);
 
 //GRADIENT
-$color-gradient-primary: radial-gradient(circle, $color-white-o03, $color-primary-light);
+$color-gradient-primary: radial-gradient(
+    circle,
+    $color-white-o03,
+    $color-primary-light
+);
 
 body {
     margin: 0em;
@@ -47,7 +63,6 @@ body {
         color: $color-accent;
 
         &.light {
-
             .loader-spinner {
                 border-top-color: $color-accent-complementary-primary;
             }
@@ -59,14 +74,13 @@ body {
     }
 
     .btn-bg-round {
-
         * {
             user-select: none;
         }
 
         &:hover {
             background-color: $color-accent-shadow-o3 !important;
-            
+
             * {
                 color: $color-accent !important;
             }
@@ -79,7 +93,7 @@ body {
 
     .btn-bg-round-flat {
         background-color: $color-white;
-    
+
         * {
             color: $color-accent;
             user-select: none;
@@ -91,10 +105,10 @@ body {
             * {
                 color: $color-white !important;
             }
-        } 
+        }
 
         &:active {
-            background-color: $color-accent-shadow !important; 
+            background-color: $color-accent-shadow !important;
         }
     }
 
@@ -109,7 +123,7 @@ body {
 
     .container {
         background-color: $color-primary-o7;
-        
+
         h1 {
             color: $color-accent-complementary-primary;
         }
@@ -120,13 +134,10 @@ body {
 
         .header {
             background-color: $color-primary-light;
-            
+
             .header--section-left {
-
                 .section-left--logo {
-
                     img {
-                        
                         &:hover {
                             background-color: $color-accent-o15;
                         }
@@ -135,25 +146,19 @@ body {
             }
 
             .header--section-right {
-    
                 .section-right--nav {
-    
                     .nav--ul {
-    
                         .ul--li {
-    
                             a {
-
                                 label {
                                     color: $color-accent-complementary-primary;
-        
+
                                     &:hover {
                                         border-color: $color-accent-complementary-primary !important;
                                     }
                                 }
 
                                 &.active {
-
                                     label {
                                         border-color: $color-accent-complementary-primary !important;
 
@@ -170,14 +175,15 @@ body {
         }
 
         .container-content {
-
             .main {
-
                 .btn-bg-round {
                     background-color: $color-accent-o15;
                 }
 
-                &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
+                &[type='about'],
+                &[type='contact'],
+                &[type='experience'],
+                &[type='projects'] {
                     flex-direction: column;
                     width: 50%;
 
@@ -186,21 +192,17 @@ body {
                     }
                 }
 
-                &[type="home"] {
-    
+                &[type='home'] {
                     .main--section {
-    
                         .section--title {
-            
                             .title-right {
-        
                                 p {
                                     color: $color-accent-complementary-primary;
 
                                     .title-right--title {
                                         background-color: $color-accent-o15;
                                         color: $color-accent;
-        
+
                                         &:hover {
                                             background-color: $color-accent-shadow-o3;
                                             color: $color-accent;
@@ -208,11 +210,9 @@ body {
                                     }
                                 }
                             }
-                            
                         }
 
                         .section--social-media {
-
                             .btn-bg-round {
                                 background-color: $color-accent-o15;
                             }
@@ -220,10 +220,8 @@ body {
                     }
                 }
 
-                &[type="about"] {
-                    
+                &[type='about'] {
                     .card {
-
                         * {
                             text-shadow: none;
                             color: $color-accent-complementary-primary;
@@ -231,20 +229,19 @@ body {
                     }
                 }
 
-                &[type="contact"] {
-
+                &[type='contact'] {
                     .card {
-
-                        h3, label, span {
+                        h3,
+                        label,
+                        span {
                             color: $color-accent-complementary-primary;
                         }
 
                         .card--body {
-
                             form {
-
-                                input[type="text"], input[type="email"], textarea {
-
+                                input[type='text'],
+                                input[type='email'],
+                                textarea {
                                     &.warning {
                                         border-color: $color-warning !important;
                                     }
@@ -252,7 +249,6 @@ body {
                             }
 
                             .message-pop-up {
-                                
                                 &.valid {
                                     background-color: $color-accent-shadow-o3;
                                     color: $color-accent-shadow;
@@ -265,9 +261,7 @@ body {
                             }
 
                             .body--section-top {
-
                                 .p-user-data {
-
                                     input {
                                         border-color: $color-accent-complementary-primary;
                                         outline-color: $color-accent;
@@ -285,15 +279,13 @@ body {
                             }
 
                             .body--section-bottom {
-
                                 .div-user-data-textarea {
-    
                                     textarea {
                                         border-color: $color-accent-complementary-primary;
                                         outline-color: $color-accent;
                                         caret-color: $color-accent;
                                         color: $color-accent-complementary-primary;
-    
+
                                         &::placeholder {
                                             color: $color-accent-complementary-primary-o7;
                                         }
@@ -306,7 +298,6 @@ body {
                             }
 
                             .body--section-bottom-info {
-
                                 .line {
                                     background-color: $color-accent-complementary-primary;
                                 }
@@ -315,12 +306,9 @@ body {
                     }
                 }
 
-                &[type="experience"] {
-                
+                &[type='experience'] {
                     .main-experience {
-
                         .card {
-
                             a {
                                 color: $color-accent;
 
@@ -337,18 +325,16 @@ body {
                                 }
                             }
 
-                            h4, h3, p {
+                            h4,
+                            h3,
+                            p {
                                 color: $color-accent-complementary-primary;
                             }
 
                             &.main-experience--aside {
-    
                                 .aside-professional--skills {
-    
                                     .skills-division {
-    
                                         p {
-    
                                             label {
                                                 background-color: $color-accent-o15;
                                                 color: $color-accent;
@@ -359,9 +345,7 @@ body {
                             }
 
                             &.main-experience--body {
-
                                 .experiences--bottom {
-
                                     a {
                                         background-color: $color-accent-o15;
                                     }
@@ -370,17 +354,14 @@ body {
                         }
                     }
                 }
-                
-                &[type="projects"] {
 
+                &[type='projects'] {
                     .main-projects {
-
                         .card {
-
-                            .card--section { 
-                            
-                                h3, p {
-                                        color: $color-accent-complementary-primary;
+                            .card--section {
+                                h3,
+                                p {
+                                    color: $color-accent-complementary-primary;
                                 }
 
                                 .chips {
@@ -388,13 +369,12 @@ body {
 
                                     .chip {
                                         background-color: $color-accent-o15;
-                                        color: $color-accent; 
+                                        color: $color-accent;
                                         font-weight: 600;
                                     }
                                 }
 
                                 a {
-                                    
                                     * {
                                         color: $color-accent;
                                     }
@@ -417,22 +397,18 @@ body {
         .footer {
             background-color: $color-secondary;
             background-image: $color-gradient-primary;
-    
+
             h3 {
                 color: $color-accent-complementary-primary;
             }
-    
+
             .footer--shortcuts {
-    
                 > div {
-    
                     ul {
-    
                         li {
-    
                             a {
                                 color: $color-accent-complementary-primary;
-    
+
                                 &:hover {
                                     background-color: $color-accent-shadow-o3;
                                 }
@@ -441,26 +417,23 @@ body {
                     }
                 }
             }
-    
-            .footer--info {
 
+            .footer--info {
                 .line {
                     background-color: $color-accent-shadow-o5;
                 }
 
                 .info--info-left {
-    
                     p {
                         color: $color-accent-complementary-primary;
-    
+
                         a {
                             color: $color-accent-complementary-primary;
                         }
                     }
                 }
-    
+
                 .info--info-right {
-    
                     * {
                         color: $color-accent-complementary-primary;
                     }
@@ -470,7 +443,6 @@ body {
     }
 
     .container-scroll-indicator {
-
         > label {
             border-color: $color-accent;
 
@@ -496,19 +468,12 @@ body {
 // -- 640px
 @media (max-width: 760px) {
     body {
-
         .container {
-
             .header {
-
                 .header--section-right {
-
                     .section-right--nav {
-
                         .nav--ul {
-
                             .ul--li {
-
                                 &:hover {
                                     background-color: $color-accent-complementary-primary-o3;
 
@@ -521,15 +486,13 @@ body {
                     }
 
                     .section-right--options {
-
                         &.end {
-
                             .btn-bg-round {
                                 background-color: transparent !important;
 
                                 &:hover {
                                     background-color: $color-accent-complementary-primary-o3 !important;
-            
+
                                     * {
                                         color: $color-white !important;
                                     }
@@ -540,7 +503,6 @@ body {
                 }
 
                 &.expand {
-
                     .header--section-right {
                         background-color: $color-secondary;
                     }
@@ -558,12 +520,12 @@ body {
 
 ::-webkit-scrollbar-track {
     background: $color-primary-light;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $color-accent-complementary-primary;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -577,7 +539,7 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-button:decrement {
@@ -587,9 +549,10 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-::-webkit-scrollbar-button:increment:hover, ::-webkit-scrollbar-button:decrement:hover {
+::-webkit-scrollbar-button:increment:hover,
+::-webkit-scrollbar-button:decrement:hover {
     cursor: pointer;
 }

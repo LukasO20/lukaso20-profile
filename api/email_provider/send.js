@@ -1,31 +1,31 @@
-import formData from 'form-data'
-import Mailgun from 'mailgun.js'
-import dotenv from 'dotenv'
+import formData from 'form-data';
+import Mailgun from 'mailgun.js';
+import dotenv from 'dotenv';
 
-dotenv.config()
-const mailgun = new Mailgun(formData)
+dotenv.config();
+const mailgun = new Mailgun(formData);
 const mg = mailgun.client({
-    username: 'api', 
-    key: process.env.MAILGUN_API_KEY
-})
+    username: 'api',
+    key: process.env.MAILGUN_API_KEY,
+});
 
 const sendEmail = async (req, res) => {
     if (req.method !== 'POST') {
-        return res.status(405).json({ 
+        return res.status(405).json({
             success: false,
-            error: 'Method not allowed. Check the type of method sent.'
-        })
+            error: 'Method not allowed. Check the type of method sent.',
+        });
     }
 
     try {
-        const { name, email, message, language } = req.body
-        const serverLanguage = language
+        const { name, email, message, language } = req.body;
+        const serverLanguage = language;
 
         if (!name || !email || !message) {
-            return res.status(400).json({ 
+            return res.status(400).json({
                 success: false,
-                error: `${serverLanguage === 'pt' ? 'É necessário preencher todos os campos.' : 'Is necessary fill out all the fields.'}`
-            })
+                error: `${serverLanguage === 'pt' ? 'É necessário preencher todos os campos.' : 'Is necessary fill out all the fields.'}`,
+            });
         }
 
         //Message's configuration
@@ -38,19 +38,21 @@ const sendEmail = async (req, res) => {
         };
 
         //Send E-mail
-        const response = await mg.messages.create(process.env.MAILGUN_DOMAIN, data);
+        const response = await mg.messages.create(
+            process.env.MAILGUN_DOMAIN,
+            data
+        );
         if (response.id) {
-            res.status(200).json({ 
+            res.status(200).json({
                 success: true,
-                message: `${serverLanguage === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!'}`
-            })            
+                message: `${serverLanguage === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!'}`,
+            });
             //console.log('Message sent successfully!')
-        } 
-    } 
-    catch (error) {
+        }
+    } catch (error) {
         //console.error('Something was wrong to send e-mail: ', error)
-        res.status(500).json({ success: false, error: error.message })
+        res.status(500).json({ success: false, error: error.message });
     }
-}
+};
 
-export default sendEmail
+export default sendEmail;

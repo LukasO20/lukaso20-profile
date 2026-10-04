@@ -45,7 +45,6 @@ body {
                 width: 100%;
 
                 &.name {
-
                     .container-head {
                         display: flex;
                         align-items: start;
@@ -58,7 +57,10 @@ body {
 
                         &:last-child {
                             flex: 0;
-                            @include layout.apply-gap-custom-fraction(0-05, 0-05);
+                            @include layout.apply-gap-custom-fraction(
+                                0-05,
+                                0-05
+                            );
 
                             label {
                                 display: flex;
@@ -74,21 +76,18 @@ body {
                                 cursor: pointer;
 
                                 &.download {
-
                                     &:hover {
                                         border-color: $color-secondary;
                                     }
                                 }
 
                                 &.translate--content {
-
                                     * {
                                         color: $color-primary-accent !important;
                                         font-weight: 600;
                                     }
 
                                     &:hover {
-
                                         * {
                                             color: lighttheme.$color-accent-complementary-primary !important;
                                         }
@@ -130,7 +129,6 @@ body {
 
             h3,
             h4 {
-
                 &.title {
                     color: $color-primary-accent;
 
@@ -140,7 +138,6 @@ body {
                 }
 
                 &.title-company {
-
                     * {
                         color: inherit;
                     }
@@ -153,20 +150,24 @@ body {
                 flex-direction: column;
 
                 .div-section-body {
-
                     ul {
                         padding-inline-start: 2.05rem;
                     }
 
                     .content {
-
                         .title-group {
                             display: flex;
-                            @include layout.apply-gap-custom-fraction(0-50, 0-50);
+                            @include layout.apply-gap-custom-fraction(
+                                0-50,
+                                0-50
+                            );
 
                             .links-group {
                                 display: flex;
-                                @include layout.apply-gap-custom-fraction(0-50, 0-50);
+                                @include layout.apply-gap-custom-fraction(
+                                    0-50,
+                                    0-50
+                                );
                             }
 
                             .chld-h4 {
@@ -174,19 +175,15 @@ body {
                             }
                         }
 
-                        &.content:nth-child(n+2) {
-
+                        &.content:nth-child(n + 2) {
                             .title {
                                 margin-top: 2.17rem;
                             }
                         }
 
                         &.sb3 {
-
                             .ul-technologies {
-
                                 li {
-
                                     ul {
                                         padding: 0em;
                                         list-style: none;
@@ -195,9 +192,11 @@ body {
                                         gap: 0.3rem;
 
                                         li {
-
                                             h4 {
-                                                @include layout.apply-margin-fraction(y, 1-05);
+                                                @include layout.apply-margin-fraction(
+                                                    y,
+                                                    1-05
+                                                );
                                             }
                                         }
                                     }
@@ -206,11 +205,10 @@ body {
                         }
 
                         &.sb4 {
-
                             .ul-projects {
                                 display: flex;
                                 flex-direction: column;
-                                gap: 1.330rem;
+                                gap: 1.33rem;
                             }
                         }
                     }
@@ -226,23 +224,18 @@ body {
 }
 
 @media print {
-
     body {
         background-color: $color-primary-light;
         line-height: 1.2em;
 
         .container {
-
             .header {
-
                 h1 {
                     margin: 0em 0em 0.67em 0em;
                 }
 
                 .div-header-head {
-
                     &.name {
-
                         .container-head:last-child {
                             display: none;
                         }
@@ -267,12 +260,12 @@ body {
 
 ::-webkit-scrollbar-track {
     background: $color-primary-light;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $color-accent-complementary-primary;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -286,7 +279,7 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-button:decrement {
@@ -296,7 +289,7 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-button:increment:hover,

@@ -1,31 +1,34 @@
-import { sendEmailAction } from './js/actions.js'
-import { iconChange } from './js/interactivity_layout.js'
-import { handleTranslate, getLanguageLocalStorage } from './js/translate_layout.js'
-import { customTitle } from './js/interactivity_layout.js'
-import { projectsRender } from './js/projects.js'
+import { sendEmailAction } from './js/actions.js';
+import { iconChange } from './js/interactivity_layout.js';
+import {
+    handleTranslate,
+    getLanguageLocalStorage,
+} from './js/translate_layout.js';
+import { customTitle } from './js/interactivity_layout.js';
+import { projectsRender } from './js/projects.js';
 
-const documentbody = document.body
+const documentbody = document.body;
 
 const renderPage = (route) => {
-    const container = document.getElementById('container-content')
-    const page = `pages/${route}.html`
+    const container = document.getElementById('container-content');
+    const page = `pages/${route}.html`;
     fetch(page)
-        .then(response => response.text())
-        .then(html => container.innerHTML = html)
-        .then(html => {
-            container.innerHTML = html
-            projectsRender()
-            handleTranslate('mainPage')
+        .then((response) => response.text())
+        .then((html) => (container.innerHTML = html))
+        .then((html) => {
+            container.innerHTML = html;
+            projectsRender();
+            handleTranslate('mainPage');
         })
-        .catch(error => {
-            console.error('Error loading page: ', error)
+        .catch((error) => {
+            console.error('Error loading page: ', error);
             container.innerHTML = `<div class="message alert">
                     <img src="libs/icon/logo-dark-mode.svg" alt="logo">
                     <h1>404 - Page not found :[</h1>
-                </div>`
-            throw error
-        })
-}
+                </div>`;
+            throw error;
+        });
+};
 
 const handleRouteChange = (route) => {
     // Update history to navegator
@@ -33,82 +36,91 @@ const handleRouteChange = (route) => {
     if (currentState !== route) {
         history.pushState({ route }, '', `#${route}`);
     }
-}
+};
 
 const handleIconChange = (header, iconChangeIcon) => {
     if (iconChangeIcon && header) {
         if (header.classList.contains('expand')) {
-            iconChange(iconChangeIcon, 'fa-bars', 'fa-circle-xmark')
+            iconChange(iconChangeIcon, 'fa-bars', 'fa-circle-xmark');
         } else {
-            iconChange(iconChangeIcon, 'fa-circle-xmark', 'fa-bars')
+            iconChange(iconChangeIcon, 'fa-circle-xmark', 'fa-bars');
         }
     }
-}
+};
 
-const linkManipulate = document.querySelectorAll('.link-page')
-const linkPage = documentbody
-const header = documentbody.querySelector('.header')
-const iconChangeIcon = documentbody.querySelector('.menu--bar .icon')
+const linkManipulate = document.querySelectorAll('.link-page');
+const linkPage = documentbody;
+const header = documentbody.querySelector('.header');
+const iconChangeIcon = documentbody.querySelector('.menu--bar .icon');
 
 linkPage.addEventListener('click', function (e) {
-    const link = e.target.closest('.link-page')
+    const link = e.target.closest('.link-page');
 
     if (link.matches('.link-page')) {
-        linkManipulate.forEach(e => {
-            e.classList.remove('active')
+        linkManipulate.forEach((e) => {
+            e.classList.remove('active');
 
-            //manipulated class of navbar button when link event is external 
-            e.classList.toggle('active', e.getAttribute('href') === link.getAttribute('href'))
-        })
-        
-        link.classList.add('active')
-        header.classList.remove('expand')
-        handleIconChange(header, iconChangeIcon)
+            //manipulated class of navbar button when link event is external
+            e.classList.toggle(
+                'active',
+                e.getAttribute('href') === link.getAttribute('href')
+            );
+        });
 
-        const route = link.getAttribute('href').replace('#', '')
-        handleRouteChange(route)
+        link.classList.add('active');
+        header.classList.remove('expand');
+        handleIconChange(header, iconChangeIcon);
+
+        const route = link.getAttribute('href').replace('#', '');
+        handleRouteChange(route);
     }
-})
+});
 
 window.addEventListener('popstate', (e) => {
-    const route = e.state?.route || history.state?.route || 'home'
-    renderPage(route)
-})
+    const route = e.state?.route || history.state?.route || 'home';
+    renderPage(route);
+});
 
 window.addEventListener('load', () => {
-    const route = location.hash.replace('#', '') || 'home'
-    renderPage(route)
+    const route = location.hash.replace('#', '') || 'home';
+    renderPage(route);
 
-    const year = new Date().getFullYear()
-    const yearElement = documentbody.querySelector('.footer--info .info--info-left span')
-    yearElement.innerHTML = year
+    const year = new Date().getFullYear();
+    const yearElement = documentbody.querySelector(
+        '.footer--info .info--info-left span'
+    );
+    yearElement.innerHTML = year;
 
     //OTHER FUNCTIONS
-    customTitle()
-})
+    customTitle();
+});
 
-const buttonSendEmail = documentbody
+const buttonSendEmail = documentbody;
 buttonSendEmail.addEventListener('click', function (e) {
-    const filter = e.target.closest('.send-email') || e.target.classList.contains('send-email')
-    const formEmail = document.getElementById('emailForm')
+    const filter =
+        e.target.closest('.send-email') ||
+        e.target.classList.contains('send-email');
+    const formEmail = document.getElementById('emailForm');
 
     if (filter) {
         const formData = {
             name: formEmail.name.value || null,
             email: formEmail.email.value || null,
             message: formEmail.message.value || null,
-            language: getLanguageLocalStorage() || 'en'
-        }
-        sendEmailAction(formData)
+            language: getLanguageLocalStorage() || 'en',
+        };
+        sendEmailAction(formData);
     }
-})
+});
 
-const buttonExpandHeader = documentbody
+const buttonExpandHeader = documentbody;
 buttonExpandHeader.addEventListener('click', function (e) {
-    const filter = e.target.closest('.menu--bar') || e.target.classList.contains('menu--bar')
+    const filter =
+        e.target.closest('.menu--bar') ||
+        e.target.classList.contains('menu--bar');
 
     if (filter) {
-        header.classList.toggle('expand')
-        handleIconChange(header, iconChangeIcon)
+        header.classList.toggle('expand');
+        handleIconChange(header, iconChangeIcon);
     }
-})
+});

@@ -1,9 +1,9 @@
 //COLORS
 $color-primary-dark: #030e1c;
-$color-secondary: #3865A0;
-$color-accent: #4E90E6;
-$color-accent-shadow: #436CA2;
-$color-accent-complementary-primary: #786A50;
+$color-secondary: #3865a0;
+$color-accent: #4e90e6;
+$color-accent-shadow: #436ca2;
+$color-accent-complementary-primary: #786a50;
 $color-white: #fff;
 $color-warning: #ad2e2e;
 
@@ -28,7 +28,11 @@ $color-accent-o07: rgba($color-accent, 0.075);
 $color-accent-o15: rgba($color-accent, 0.15);
 
 //GRADIENT
-$color-gradient-primary: radial-gradient(circle, $color-white-o03, $color-primary-dark);
+$color-gradient-primary: radial-gradient(
+    circle,
+    $color-white-o03,
+    $color-primary-dark
+);
 
 body {
     margin: 0em;
@@ -42,7 +46,6 @@ body {
         color: $color-accent-shadow;
 
         &.dark {
-
             .loader-spinner {
                 border-top-color: $color-white;
             }
@@ -54,20 +57,18 @@ body {
     }
 
     .btn-bg-round {
-
         * {
             user-select: none;
         }
 
         &:hover {
             background-color: $color-secondary-o3 !important;
-            
+
             * {
                 color: $color-accent !important;
             }
 
             &.translate--content {
-
                 .translate--text {
                     color: $color-accent !important;
                 }
@@ -79,7 +80,6 @@ body {
         }
 
         &.translate--content {
-
             .translate--text {
                 color: $color-white !important;
             }
@@ -88,7 +88,7 @@ body {
 
     .btn-bg-round-flat {
         background-color: $color-white;
-    
+
         * {
             color: $color-accent;
             user-select: none;
@@ -100,10 +100,10 @@ body {
             * {
                 color: $color-white !important;
             }
-        } 
+        }
 
         &:active {
-            background-color: $color-primary-o7 !important; 
+            background-color: $color-primary-o7 !important;
         }
     }
 
@@ -118,7 +118,7 @@ body {
 
     .container {
         background-color: $color-primary-o7;
-        
+
         h1 {
             color: $color-white;
         }
@@ -129,13 +129,10 @@ body {
 
         .header {
             background-color: $color-primary-dark;
-    
+
             .header--section-left {
-
                 .section-left--logo {
-
                     img {
-                        
                         &:hover {
                             background-color: $color-accent-o15;
                         }
@@ -144,25 +141,19 @@ body {
             }
 
             .header--section-right {
-    
                 .section-right--nav {
-    
                     .nav--ul {
-    
                         .ul--li {
-    
                             a {
-
                                 label {
                                     color: $color-white;
-        
+
                                     &:hover {
-                                        border-color: $color-white !important; 
+                                        border-color: $color-white !important;
                                     }
                                 }
 
                                 &.active {
-
                                     label {
                                         border-color: $color-white !important;
 
@@ -183,14 +174,14 @@ body {
         }
 
         .container-content {
-
             .main {
-
                 .btn-bg-round {
                     background-color: $color-white-o07;
                 }
 
-                &[type="about"], &[type="contact"], &[type="experience"] {
+                &[type='about'],
+                &[type='contact'],
+                &[type='experience'] {
                     flex-direction: column;
                     width: 50%;
 
@@ -200,21 +191,17 @@ body {
                     }
                 }
 
-                &[type="home"] {
-    
+                &[type='home'] {
                     .main--section {
-    
                         .section--title {
-            
                             .title-right {
-        
                                 p {
                                     color: $color-white;
 
                                     .title-right--title {
                                         background-color: $color-white-o07;
                                         color: $color-accent;
-        
+
                                         &:hover {
                                             background-color: $color-white;
                                             color: $color-accent;
@@ -226,26 +213,21 @@ body {
                     }
                 }
 
-                &[type="about"] {
-                    
+                &[type='about'] {
                     .card {
-
                         .btn-bg-round-flat {
                             text-shadow: none;
                         }
                     }
                 }
 
-                &[type="contact"] {
-
+                &[type='contact'] {
                     .card {
-
                         .card--body {
-
                             form {
-
-                                input[type="text"], input[type="email"], textarea {
-
+                                input[type='text'],
+                                input[type='email'],
+                                textarea {
                                     &.warning {
                                         border-color: $color-warning !important;
                                     }
@@ -253,7 +235,6 @@ body {
                             }
 
                             .message-pop-up {
-                                
                                 &.valid {
                                     background-color: $color-secondary-o1;
                                     color: $color-accent;
@@ -266,9 +247,7 @@ body {
                             }
 
                             .body--section-top {
-
                                 .p-user-data {
-
                                     input {
                                         border-color: $color-white;
                                         outline-color: $color-accent;
@@ -286,15 +265,13 @@ body {
                             }
 
                             .body--section-bottom {
-
                                 .div-user-data-textarea {
-    
                                     textarea {
                                         border-color: $color-white;
                                         outline-color: $color-accent;
                                         caret-color: $color-accent;
                                         color: $color-white;
-    
+
                                         &::placeholder {
                                             color: $color-white;
                                         }
@@ -303,7 +280,6 @@ body {
                             }
 
                             .body--section-bottom-info {
-
                                 .line {
                                     background-color: $color-white;
                                 }
@@ -312,12 +288,9 @@ body {
                     }
                 }
 
-                &[type="experience"] {
-                
+                &[type='experience'] {
                     .main-experience {
-
                         .card {
-
                             a {
                                 color: $color-accent;
 
@@ -335,13 +308,9 @@ body {
                             }
 
                             &.main-experience--aside {
-    
                                 .aside-professional--skills {
-    
                                     .skills-division {
-    
                                         p {
-    
                                             label {
                                                 background-color: $color-accent-o15;
                                                 color: $color-accent;
@@ -352,9 +321,7 @@ body {
                             }
 
                             &.main-experience--body {
-
                                 .experiences--bottom {
-
                                     a {
                                         background-color: $color-accent-o15;
                                     }
@@ -364,15 +331,12 @@ body {
                     }
                 }
 
-                &[type="projects"] {
-
+                &[type='projects'] {
                     .main-projects {
-
                         .card {
-
-                            .card--section { 
-                            
-                                h3, p {
+                            .card--section {
+                                h3,
+                                p {
                                     color: $color-white;
                                 }
 
@@ -381,15 +345,14 @@ body {
 
                                     .chip {
                                         background-color: $color-accent-o15;
-                                        color: $color-accent; 
+                                        color: $color-accent;
                                         font-weight: 600;
                                     }
                                 }
-                            
+
                                 a {
-                                    
                                     * {
-                                            color: $color-accent;
+                                        color: $color-accent;
                                     }
 
                                     &:hover {
@@ -410,22 +373,18 @@ body {
         .footer {
             background-color: $color-primary-dark;
             background-image: $color-gradient-primary;
-    
+
             h3 {
                 color: $color-white;
             }
-    
+
             .footer--shortcuts {
-    
                 > div {
-    
                     ul {
-    
                         li {
-    
                             a {
                                 color: $color-white;
-    
+
                                 &:hover {
                                     background-color: $color-secondary-o3;
                                 }
@@ -434,26 +393,23 @@ body {
                     }
                 }
             }
-    
-            .footer--info {
 
+            .footer--info {
                 .line {
                     background-color: $color-white-o05;
                 }
 
                 .info--info-left {
-    
                     p {
                         color: $color-white;
-    
+
                         a {
                             color: $color-white;
                         }
                     }
                 }
-    
+
                 .info--info-right {
-    
                     * {
                         color: $color-white;
                     }
@@ -463,7 +419,6 @@ body {
     }
 
     .container-scroll-indicator {
-
         > label {
             border-color: $color-accent;
 
@@ -489,19 +444,12 @@ body {
 // -- 640px
 @media (max-width: 760px) {
     body {
-
         .container {
-
             .header {
-
                 .header--section-right {
-
                     .section-right--nav {
-
                         .nav--ul {
-
                             .ul--li {
-
                                 &:hover {
                                     background-color: $color-white-o3;
                                 }
@@ -510,11 +458,8 @@ body {
                     }
 
                     .section-right--options {
-
                         &.end {
-
                             .btn-bg-round {
-
                                 &:hover {
                                     background-color: $color-white-o3 !important;
 
@@ -528,7 +473,6 @@ body {
                 }
 
                 &.expand {
-
                     .header--section-right {
                         background-color: $color-secondary;
                     }
@@ -546,12 +490,12 @@ body {
 
 ::-webkit-scrollbar-track {
     background: $color-primary-dark;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $color-white;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -565,7 +509,7 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-button:decrement {
@@ -575,9 +519,10 @@ body {
     background-repeat: no-repeat;
     height: 2em;
     border-radius: 0px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-::-webkit-scrollbar-button:increment:hover, ::-webkit-scrollbar-button:decrement:hover {
+::-webkit-scrollbar-button:increment:hover,
+::-webkit-scrollbar-button:decrement:hover {
     cursor: pointer;
 }
