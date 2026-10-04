@@ -33,9 +33,8 @@
                     transition: 0.3s ease-in-out;
 
                     .section-right--nav {
-
                         .nav--ul {
-                            display: flex ;
+                            display: flex;
                             flex-direction: column;
                             padding: 0;
                             text-transform: uppercase;
@@ -45,9 +44,7 @@
                                 @include layout.apply-border(all, 1);
 
                                 &:hover {
-
                                     a {
-
                                         label {
                                             border-color: transparent !important;
                                         }
@@ -58,9 +55,7 @@
                     }
 
                     .section-right--options {
-
                         &.end {
-
                             .btn-bg-round {
                                 @include layout.apply-padding(all, 1);
                             }
@@ -72,7 +67,6 @@
                     display: flex;
 
                     .btn-bg-round {
-
                         &.menu--bar {
                             cursor: pointer;
                         }
@@ -80,7 +74,6 @@
                 }
 
                 &.expand {
-
                     .header--section-right {
                         @include layout.apply-padding-fraction(all, 2-05);
                         height: 100vh;
@@ -90,7 +83,6 @@
             }
 
             .container-content {
-    
                 .main {
                     margin: 0;
                     width: 90% !important;
@@ -104,12 +96,11 @@
                         text-align: end;
                     }
 
-                    &[type="home"] {
+                    &[type='home'] {
                         width: 95%;
                         font-size: 0.8rem;
 
                         .main--section {
-                
                             .section--title {
                                 flex-direction: column;
                                 justify-content: start;
@@ -117,7 +108,8 @@
                                 .title-left {
                                     @include layout.apply-padding(all, 1);
 
-                                    h1, h2 {
+                                    h1,
+                                    h2 {
                                         text-align: center;
                                     }
                                 }
@@ -146,15 +138,13 @@
                         }
                     }
 
-                    &[type="about"] {
-
+                    &[type='about'] {
                         h1 {
                             margin-right: 0.5em;
                         }
                     }
 
-                    &[type="experience"] {
-
+                    &[type='experience'] {
                         h1 {
                             margin-right: 0.5em;
                         }
@@ -166,36 +156,29 @@
                         }
                     }
 
-                    &[type="projects"] {
-
-                        .card { 
-
+                    &[type='projects'] {
+                        .card {
                             .card--banner {
                                 display: none;
                             }
                         }
-                    }  
+                    }
 
-                    &[type="contact"] {
-
-                        .card  {
-
+                    &[type='contact'] {
+                        .card {
                             .card--body {
-
                                 .body--section-top {
-
                                     .p-user-data {
                                         width: 47%;
                                     }
                                 }
                             }
-                        }   
+                        }
                     }
                 }
             }
 
             .footer {
-                
                 .footer--shortcuts {
                     @include layout.apply-padding-custom(2, 1, 2, 1);
                     gap: 0em;
@@ -234,47 +217,46 @@
         background-size: auto;
 
         .container {
-
             .header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-    
+
                 .header--section-left {
-    
                     .section-left--logo {
-    
                         img {
                             border-radius: 0.7em;
                             padding: 0.35em 0.15em;
                         }
                     }
                 }
-    
+
                 .header--section-right {
-        
                     .section-right--nav {
-        
                         .nav--ul {
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             list-style: none;
-                            @include layout.apply-gap-custom-fraction(2-05, 2-05);
-        
+                            @include layout.apply-gap-custom-fraction(
+                                2-05,
+                                2-05
+                            );
+
                             .ul--li {
-                                
                                 * {
                                     cursor: pointer;
                                 }
-        
+
                                 &:nth-child(-n + 3) {
-                                    
                                     a {
                                         text-decoration: none;
-        
+
                                         label {
-                                            @include layout.apply-padding-fraction(all, 0-25);
+                                            @include layout.apply-padding-fraction(
+                                                all,
+                                                0-25
+                                            );
                                             border-bottom: solid 2px transparent;
                                         }
                                     }
@@ -284,34 +266,37 @@
                     }
                 }
             }
-    
+
             .container-content {
-    
                 .main {
-    
-                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {                        
+                    &[type='about'],
+                    &[type='contact'],
+                    &[type='experience'],
+                    &[type='projects'] {
                         width: 70%;
                     }
 
-                    &[type="projects"] {
-
-                        .card { 
-
+                    &[type='projects'] {
+                        .card {
                             .card--banner {
                                 display: none;
                             }
                         }
-                    }  
-    
-                    &[type="home"] {
+                    }
+
+                    &[type='home'] {
                         width: 95%;
 
                         .main--section {
-                
                             .section--title {
-    
-                                .title-left, .title-right {
-                                    @include layout.apply-padding-custom(3, 2, 3, 2);
+                                .title-left,
+                                .title-right {
+                                    @include layout.apply-padding-custom(
+                                        3,
+                                        2,
+                                        3,
+                                        2
+                                    );
                                 }
                             }
                         }
@@ -330,18 +315,17 @@
         background-size: auto;
 
         .container {
-
             .container-content {
-    
                 .main {
-    
-                    &[type="about"], &[type="contact"], &[type="experience"] {
+                    &[type='about'],
+                    &[type='contact'],
+                    &[type='experience'] {
                         width: 60%;
                     }
 
-                    &[type="projects"] {
-                        width: 80%;
-                    }     
+                    &[type='projects'] {
+                        width: 82%;
+                    }
                 }
             }
         }
@@ -351,34 +335,31 @@
 // -- 1920px
 @media (min-width: 1920px) {
     body {
-    
         .container {
-    
             .header {
                 width: 85%;
                 margin: auto;
             }
 
             .container-content {
-    
                 .main {
-    
-                    &[type="about"], &[type="contact"], &[type="experience"] {
+                    &[type='about'],
+                    &[type='contact'],
+                    &[type='experience'] {
                         width: 40%;
                     }
 
-                    &[type="projects"] {
+                    &[type='projects'] {
                         width: 60%;
                     }
 
-                    &[type="home"] {
+                    &[type='home'] {
                         width: 60%;
                     }
                 }
             }
 
             .footer {
-
                 > div {
                     width: 85%;
                     margin: auto;
@@ -391,7 +372,6 @@
 // -- 2560px
 @media (min-width: 2560px) {
     body {
-    
         .container {
             grid-template-rows: auto minmax(100vh, auto) 60vh;
 
@@ -401,18 +381,18 @@
             }
 
             .container-content {
-    
                 .main {
-    
-                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
+                    &[type='about'],
+                    &[type='contact'],
+                    &[type='experience'],
+                    &[type='projects'] {
                         width: 45%;
                     }
 
-                    &[type="home"] {
+                    &[type='home'] {
                         width: 50%;
 
                         .main--section {
-                
                             .section--title {
                                 flex: 1;
                             }
@@ -422,7 +402,6 @@
             }
 
             .footer {
-
                 > div {
                     width: 55%;
                     margin: auto;
@@ -435,23 +414,22 @@
 // -- 3840px
 @media (min-width: 3840px) {
     body {
-    
         .container {
-    
             .header {
                 width: 45%;
                 margin: auto;
             }
 
             .container-content {
-    
                 .main {
-    
-                    &[type="about"], &[type="contact"], &[type="experience"], &[type="projects"] {
+                    &[type='about'],
+                    &[type='contact'],
+                    &[type='experience'],
+                    &[type='projects'] {
                         width: 35%;
                     }
 
-                    &[type="home"] {
+                    &[type='home'] {
                         width: 40%;
                     }
                 }

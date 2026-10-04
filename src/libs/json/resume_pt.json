@@ -6,7 +6,9 @@
     ],
     "section": [
         "Educação",
-        "Graduação em Análise e Desenvolvimento de Sistemas", "Fevereiro 2022 - Dezembro 2023", "Universidade Cruzeiro do Sul - São Paulo, Brazil.",
+        "Graduação em Análise e Desenvolvimento de Sistemas",
+        "Fevereiro 2022 - Dezembro 2023",
+        "Universidade Cruzeiro do Sul - São Paulo, Brazil.",
         "Experiência",
         "Engenheiro de Software Front-end (Setembro 2025 - Atual)",
         "Desenvolvimento de plataforma web para gestão organizacional de usuários e produtos compartilhados entre aplicações, utilizando React, TypeScript, APIs e arquitetura de Micro Frontends, com hooks personalizados para encapsulamento de regras de negócio e escalabilidade.",
@@ -32,15 +34,21 @@
         "Suporte no desenvolvimento e manutenção de sistemas web internos responsivos e plataformas produtivas, garantindo funcionalidade estável e otimizada em diferentes dispositivos.",
         "Assistência no desenvolvimento e criação de interfaces web com HTML, CSS e JavaScript, além da resolução de bugs impactantes na interface.",
         "Suporte na criação e desenvolvimento de componentes com C# e .NET, além da correção de bugs críticos em processos de requisição de dados.",
-        "Habilidades", "Tecnologias", "Bibliotecas e Frameworks", "Ferramentas e Plataformas",
+        "Habilidades",
+        "Tecnologias",
+        "Bibliotecas e Frameworks",
+        "Ferramentas e Plataformas",
         "Projetos",
         "Portfólio pessoal",
-        "visualizar github repository", "visualizar projeto",
+        "visualizar github repositório",
+        "visualizar projeto",
         "Portfólio pessoal mais recente, focado na minha carreira profissional e nas minhas habilidades como desenvolvedor. Construído com uma arquitetura SPA baseada em JavaScript e utilizando SASS para estilos escaláveis e de fácil manutenção. O site se tornou minha principal plataforma para compartilhar minha jornada profissional e apresentar meus projetos.",
-        "em desenvolvimento",
-        "visualizar github repository",
+        "visualizar github repositório",
+        "acessar demonstração",
         "Reach Goals é uma aplicação web moderna voltada para o gerenciamento de atividades diárias, como tarefas e metas pessoais. Permite a criação e organização de atividades com agrupamento por tags, além de oferecer diferentes modos de visualização, como lista, cards e calendário. Desenvolvida com foco em usabilidade, escalabilidade e arquitetura limpa, utilizando tecnologias como React, Node.js, JavaScript, API REST, Prisma ORM, PostgreSQL e Design Patterns. O projeto é hospedado na Vercel, com deploy contínuo e estrutura modular, garantindo agilidade e facilidade de manutenção.",
         "Cursos",
-        "Curso web completo moderno com JavaScript", "visualizar certificado", "conclusão - 2023"
+        "Curso web completo moderno com JavaScript",
+        "visualizar certificado",
+        "conclusão - 2023"
     ]
 }
