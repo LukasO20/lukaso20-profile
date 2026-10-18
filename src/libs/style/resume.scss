@@ -37,7 +37,7 @@ body {
             }
 
             h2 {
-                margin: 0em 0em 0.5rem 0em;
+                margin: 0em;
             }
 
             .div-header-head {
@@ -99,7 +99,7 @@ body {
                 }
 
                 &.links {
-                    justify-content: space-between;
+                    @include layout.apply-gap-custom-fraction(1-50, 1-50);
 
                     p {
                         display: flex;
