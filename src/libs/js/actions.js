@@ -8,7 +8,7 @@ const currentUrl = window.location.hostname;
 const pathUrl =
     currentUrl === '127.0.0.1'
         ? 'http://localhost:5000'
-        : 'https://lukaso20-profile.vercel.app';
+        : 'https://lucasoliveiradev.com';
 const API_URL = pathUrl;
 
 const sendEmailAction = async (form) => {
